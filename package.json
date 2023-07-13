@@ -15,7 +15,11 @@
   },
   "author": "Viametrics",
   "dependencies": {
-    "@actions/core": "^1.10.0"
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1",
+    "@aws-sdk/client-ecr": "^3.369.0",
+    "date-fns": "^2.30.0",
+    "docker-cli-js": "^2.10.0"
   },
   "devDependencies": {
     "@types/node": "^20.4.2",

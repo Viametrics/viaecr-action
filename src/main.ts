@@ -1,19 +1,37 @@
 import * as core from '@actions/core'
-import {wait} from './wait'
+import {context} from '@actions/github'
+import {checkIfEcrImageExists, getEcrRegistry} from './aws-utils'
+import {format} from 'date-fns'
+import {Docker} from 'docker-cli-js'
+import {actionInput} from './action-input'
 
 async function run(): Promise<void> {
-  try {
-    const ms: string = core.getInput('milliseconds')
-    core.debug(`Waiting ${ms} milliseconds ...`) // debug is only output if you set the secret `ACTIONS_STEP_DEBUG` to true
+  const registry: string = await getEcrRegistry()
+  const dockerfile: string = actionInput.dockerfile
 
-    core.debug(new Date().toTimeString())
-    await wait(parseInt(ms, 10))
-    core.debug(new Date().toTimeString())
+  const repository: string = actionInput.repository
+  const imageTag: string = createImageTag()
+  await checkIfEcrImageExists(repository, imageTag)
 
-    core.setOutput('time', new Date().toTimeString())
-  } catch (error) {
-    if (error instanceof Error) core.setFailed(error.message)
-  }
+  // Build and push image
+  const regRepoImg = `${registry}/${repository}:${imageTag}`
+  const dockerBuild = `build ${actionInput.buildArgs} -t ${regRepoImg} -f ./${dockerfile} .`
+
+  const docker = new Docker()
+  await docker.command(dockerBuild)
+  await docker.command(`push ${regRepoImg}`)
 }
 
-run()
+function createImageTag(): string {
+  const shortSha: string = context.sha.substring(0, 7)
+  const timestamp: string = format(new Date(), 'yyyyMMdd-HHmm')
+  return `${actionInput.tagPrefix}${timestamp}-${shortSha}`
+}
+
+try {
+  run()
+} catch (error) {
+  if (error instanceof Error) {
+    core.setFailed(error.message)
+  }
+}
