@@ -1,4 +1,4 @@
-# ViaECR Github Action
+# ViaECR GitHub Action
 Builds and publishes a Dockerfile to ECR with a standardised image tag. The standardised tag name
 is `YYYYmmdd-HHMM-${short_SHA}`, e.g. `20210609-0609-abc123`.
 
