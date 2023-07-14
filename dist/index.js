@@ -40,35 +40,35 @@ function getEnv(name) {
 }
 function parseBuildArgs() {
     try {
-        const raw = core.getInput('buildArgs');
+        const raw = core.getInput("buildArgs");
         if (!raw)
-            return '';
+            return "";
         return Object.entries(JSON.parse(raw))
             .map(([key, value]) => `--build-arg ${key}=${value}`)
-            .join(' ');
+            .join(" ");
     }
     catch (e) {
         if (e instanceof Error) {
             core.error(`Failed to parse buildArgs: ${e.message}`);
         }
         else {
-            core.error('Failed to parse buildArgs');
+            core.error("Failed to parse buildArgs");
         }
-        return '';
+        return "";
     }
 }
 exports.actionInput = {
-    awsAccessKeyId: getEnv('AWS_ACCESS_KEY_ID'),
-    awsSecretAccessKey: getEnv('AWS_SECRET_ACCESS_KEY'),
-    awsRegion: getEnv('AWS_REGION'),
-    repository: core.getInput('repository'),
-    dockerfile: core.getInput('dockerfile'),
-    tagPrefix: core.getInput('tagPrefix'),
+    awsAccessKeyId: getEnv("AWS_ACCESS_KEY_ID"),
+    awsSecretAccessKey: getEnv("AWS_SECRET_ACCESS_KEY"),
+    awsRegion: getEnv("AWS_REGION"),
+    repository: core.getInput("repository"),
+    dockerfile: core.getInput("dockerfile"),
+    tagPrefix: core.getInput("tagPrefix"),
     buildArgs: parseBuildArgs(),
 };
 exports.awsCredentials = {
-    accessKeyId: core.getInput('awsAccessKeyId'),
-    secretAccessKey: core.getInput('awsSecretAccessKey'),
+    accessKeyId: core.getInput("awsAccessKeyId"),
+    secretAccessKey: core.getInput("awsSecretAccessKey"),
 };
 
 
@@ -105,12 +105,12 @@ function getEcrRegistry() {
     var _a, _b, _c;
     return __awaiter(this, void 0, void 0, function* () {
         const response = yield exports.ecrClient.send(new client_ecr_1.DescribeRepositoriesCommand({}));
-        const repositoryUri = (_c = (_b = (_a = response === null || response === void 0 ? void 0 : response.repositories) === null || _a === void 0 ? void 0 : _a[0]) === null || _b === void 0 ? void 0 : _b.repositoryUri) === null || _c === void 0 ? void 0 : _c.split('/')[0];
+        const repositoryUri = (_c = (_b = (_a = response === null || response === void 0 ? void 0 : response.repositories) === null || _a === void 0 ? void 0 : _a[0]) === null || _b === void 0 ? void 0 : _b.repositoryUri) === null || _c === void 0 ? void 0 : _c.split("/")[0];
         if (repositoryUri) {
             return repositoryUri;
         }
         else {
-            throw new Error('No repositories found');
+            throw new Error("No repositories found");
         }
     });
 }
@@ -197,7 +197,7 @@ function run() {
 }
 function createImageTag() {
     const shortSha = github_1.context.sha.substring(0, 7);
-    const timestamp = (0, date_fns_1.format)(new Date(), 'yyyyMMdd-HHmm');
+    const timestamp = (0, date_fns_1.format)(new Date(), "yyyyMMdd-HHmm");
     return `${action_input_1.actionInput.tagPrefix}${timestamp}-${shortSha}`;
 }
 try {

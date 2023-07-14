@@ -1,19 +1,19 @@
-name: 'Build Server and Push to ECR'
-description: 'Builds a Docker image, tags it and pushes to ECR'
+name: "Build Server and Push to ECR"
+description: "Builds a Docker image, tags it and pushes to ECR"
 inputs:
   repository:
-    description: 'ECR Repository name'
+    description: "ECR Repository name"
     required: true
   buildArgs:
-    description: 'JSON with build args to pass to Docker'
+    description: "JSON with build args to pass to Docker"
     required: false
   tagPrefix:
-    description: 'Add a prefix to the image tag'
-    default: ''
+    description: "Add a prefix to the image tag"
+    default: ""
   dockerfile:
-    description: 'Path to Dockerfile'
+    description: "Path to Dockerfile"
     required: true
-    default: 'Dockerfile'
+    default: "Dockerfile"
 runs:
-  using: 'node16'
-  main: 'dist/index.js'
+  using: "node16"
+  main: "dist/index.js"
