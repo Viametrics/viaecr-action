@@ -43,12 +43,12 @@ in turn allows Docker to reuse early build stages for multiple images.
 
 #### Examples
 Single target input with no `--target`:
-`targets: '{ "repo": "repository1" }'`
-`targets: '[{ "repo": "repository1" }]'`
+ - `targets: '{ "repo": "repository1" }'`
+ - `targets: '[{ "repo": "repository1" }]'`
 
 Single target input with `--target myTarget`:
-`targets: '{ "repo": "repository1", "target": "myTarget" }'`
-`targets: '[{ "repo": "repository1", "target": "myTarget" }]'`
+ - `targets: '{ "repo": "repository1", "target": "myTarget" }'`
+ - `targets: '[{ "repo": "repository1", "target": "myTarget" }]'`
 
 Multiple targets:
 ```yaml
