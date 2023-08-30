@@ -13,6 +13,7 @@ inputs:
     default: "false"
   tag-prefix:
     description: "Add a prefix to the image tag"
+    required: true
     default: ""
   dockerfile:
     description: "Path to Dockerfile"
