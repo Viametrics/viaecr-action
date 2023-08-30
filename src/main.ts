@@ -1,31 +1,44 @@
 import * as core from "@actions/core";
 import { context } from "@actions/github";
-import { checkIfEcrImageExists, getEcrRegistry } from "./aws-utils";
+import { getEcrRegistry } from "./aws-utils";
 import { format } from "date-fns";
 import { Docker } from "docker-cli-js";
 import { actionInput } from "./action-input";
+import {buildDocker, DockerBuild, publishDocker} from './docker-utils'
 
 async function run(): Promise<void> {
   const registry: string = await getEcrRegistry();
-  const dockerfile: string = actionInput.dockerfile;
-
-  const repository: string = actionInput.repository;
   const imageTag: string = createImageTag();
-  await checkIfEcrImageExists(repository, imageTag);
 
-  // Build and push image
-  const regRepoImg = `${registry}/${repository}:${imageTag}`;
-  const dockerBuild = `build ${actionInput.buildArgs} -t ${regRepoImg} -f ./${dockerfile} .`;
+  // TODO This is a placeholder before enabling multi-target builds.
+  const docker: Docker = new Docker();
+  const builds: DockerBuild[] = [
+    { imageTag: imageTag },
+  ];
 
-  // Enable or disable buildkit
-  core.exportVariable(
-    "DOCKER_BUILDKIT",
-    actionInput.disableBuildkit ? "0" : "1",
-  );
+  // Build all images before publishing, to reduce likelihood of partial success
+  for (const build of builds) {
+    await buildDocker(docker, registry, build);
+  }
 
-  const docker = new Docker();
-  await docker.command(dockerBuild);
-  await docker.command(`push ${regRepoImg}`);
+  // If ay of the images fail to publish, the run will be marked as failed,
+  // but the remaining images will still be uploaded.
+  // This will allow the action to recover from a previous failure by uploading
+  // the remaining images, even in cases where image tags are immutable (which
+  // will make images that have succeeded in previous runs to fail).
+  let hasErrors = false;
+  for (const build of builds) {
+    try {
+      await publishDocker(docker, registry, build);
+    } catch (e: any) {
+      core.error(e.message);
+      hasErrors = true;
+    }
+  }
+
+  if (hasErrors) {
+    core.setFailed("Failed to publish Docker image");
+  }
 }
 
 function createImageTag(): string {
