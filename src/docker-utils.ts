@@ -19,7 +19,9 @@ export async function buildDocker(
 
   await checkIfEcrImageExists(repository, build.imageTag);
   const regRepoImg = `${registry}/${repository}:${imageTag}`;
-  const dockerBuild = `build ${buildArgs} -t ${regRepoImg} -f ./${dockerfile} .`;
+  const dockerBuild = `build ${buildArgs} `
+    + `-t ${regRepoImg} `
+    + `-f ./${dockerfile} .`;
   await docker.command(dockerBuild);
 }
 
@@ -39,4 +41,8 @@ function setBuildKitEnv() {
     "DOCKER_BUILDKIT",
     actionInput.disableBuildkit ? "0" : "1",
   );
+
+  if (actionInput.disableBuildkit) {
+    core.exportVariable("BUILDKIT_PROGRESS", "plain");
+  }
 }

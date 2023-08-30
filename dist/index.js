@@ -186,7 +186,9 @@ function buildDocker(docker, registry, build) {
         const { repository, buildArgs, dockerfile } = action_input_1.actionInput;
         yield (0, aws_utils_1.checkIfEcrImageExists)(repository, build.imageTag);
         const regRepoImg = `${registry}/${repository}:${imageTag}`;
-        const dockerBuild = `build ${buildArgs} -t ${regRepoImg} -f ./${dockerfile} .`;
+        const dockerBuild = `build ${buildArgs} `
+            + `-t ${regRepoImg} `
+            + `-f ./${dockerfile} .`;
         yield docker.command(dockerBuild);
     });
 }
@@ -202,6 +204,9 @@ function publishDocker(docker, registry, build) {
 exports.publishDocker = publishDocker;
 function setBuildKitEnv() {
     core.exportVariable("DOCKER_BUILDKIT", action_input_1.actionInput.disableBuildkit ? "0" : "1");
+    if (action_input_1.actionInput.disableBuildkit) {
+        core.exportVariable("BUILDKIT_PROGRESS", "plain");
+    }
 }
 
 
