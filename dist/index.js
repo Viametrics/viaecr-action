@@ -57,6 +57,39 @@ function parseBuildArgs() {
         return "";
     }
 }
+function parseTargets() {
+    const raw = core.getInput("targets");
+    if (!raw) {
+        core.setFailed("No targets specified");
+        process.exit(1);
+    }
+    let targets = [];
+    try {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) {
+            targets = parsed; // Multiple targets
+        }
+        else if (typeof parsed === 'object') {
+            targets = [parsed]; // Single target
+        }
+        else {
+            core.setFailed("Invalid input format for targets");
+            process.exit(1);
+        }
+        // Validation if needed, e.g., check if each object has a 'repository' field.
+        for (const target of targets) {
+            if (!target.repo) {
+                core.setFailed("'repo' field is mandatory for all targets");
+                process.exit(1);
+            }
+        }
+    }
+    catch (e) {
+        core.setFailed("Failed to parse targets");
+        process.exit(1);
+    }
+    return targets;
+}
 function getInputAsBoolean(name) {
     let input = core.getInput(name).toLowerCase();
     return input === "true" || input === "1" || input === "yes" || input === "y";
@@ -65,11 +98,11 @@ exports.actionInput = {
     awsAccessKeyId: getEnv("AWS_ACCESS_KEY_ID"),
     awsSecretAccessKey: getEnv("AWS_SECRET_ACCESS_KEY"),
     awsRegion: getEnv("AWS_REGION"),
-    repository: core.getInput("repository"),
     dockerfile: core.getInput("dockerfile"),
     tagPrefix: core.getInput("tag-prefix"),
     disableBuildkit: getInputAsBoolean("disable-buildkit"),
     buildArgs: parseBuildArgs(),
+    targets: parseTargets(),
 };
 
 
@@ -179,26 +212,30 @@ exports.publishDocker = exports.buildDocker = void 0;
 const action_input_1 = __nccwpck_require__(3640);
 const aws_utils_1 = __nccwpck_require__(70598);
 const core = __importStar(__nccwpck_require__(42186));
-function buildDocker(docker, registry, build) {
+function fullImageTag(registry, build) {
+    const { repo, imageTag } = build;
+    return `${registry}/${repo}:${imageTag}`;
+}
+function buildDocker(docker, registry, imageTag, build) {
     return __awaiter(this, void 0, void 0, function* () {
         setBuildKitEnv();
-        const { imageTag } = build;
-        const { repository, buildArgs, dockerfile } = action_input_1.actionInput;
-        yield (0, aws_utils_1.checkIfEcrImageExists)(repository, build.imageTag);
-        const regRepoImg = `${registry}/${repository}:${imageTag}`;
-        const dockerBuild = `build ${buildArgs} `
-            + `-t ${regRepoImg} `
-            + `-f ./${dockerfile} .`;
+        const { repo, target } = build;
+        const { buildArgs, dockerfile } = action_input_1.actionInput;
+        yield (0, aws_utils_1.checkIfEcrImageExists)(repo, imageTag);
+        const dockerBuild = [
+            `build ${buildArgs}`,
+            `-t ${fullImageTag(registry, build)}`,
+            target ? `--target ${target}` : '',
+            `-f ./${dockerfile}`,
+            '.'
+        ].join(' ');
         yield docker.command(dockerBuild);
     });
 }
 exports.buildDocker = buildDocker;
 function publishDocker(docker, registry, build) {
     return __awaiter(this, void 0, void 0, function* () {
-        const { imageTag } = build;
-        const { repository } = action_input_1.actionInput;
-        const regRepoImg = `${registry}/${repository}:${imageTag}`;
-        yield docker.command(`push ${regRepoImg}`);
+        yield docker.command(`push ${fullImageTag(registry, build)}`);
     });
 }
 exports.publishDocker = publishDocker;
@@ -261,14 +298,13 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         const registry = yield (0, aws_utils_1.getEcrRegistry)();
         const imageTag = createImageTag();
-        // TODO This is a placeholder before enabling multi-target builds.
         const docker = new docker_cli_js_1.Docker();
-        const builds = [
-            { imageTag: imageTag },
-        ];
+        const builds = action_input_1.actionInput.targets.map((targetInput) => {
+            return Object.assign({ imageTag: imageTag }, targetInput);
+        });
         // Build all images before publishing, to reduce likelihood of partial success
         for (const build of builds) {
-            yield (0, docker_utils_1.buildDocker)(docker, registry, build);
+            yield (0, docker_utils_1.buildDocker)(docker, registry, imageTag, build);
         }
         // If ay of the images fail to publish, the run will be marked as failed,
         // but the remaining images will still be uploaded.
