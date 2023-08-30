@@ -5,23 +5,36 @@ import * as core from '@actions/core'
 
 export interface DockerBuild {
   target?: string;
+  repo: string;
   imageTag: string;
+}
+
+function fullImageTag(
+  registry: string,
+  build: DockerBuild,
+  ) {
+  const { repo, imageTag } = build;
+  return `${registry}/${repo}:${imageTag}`;
 }
 
 export async function buildDocker(
   docker: Docker,
   registry: string,
+  imageTag: string,
   build: DockerBuild,
 ) {
   setBuildKitEnv();
-  const { imageTag } = build;
-  const { repository, buildArgs, dockerfile } = actionInput;
+  const { repo, target } = build;
+  const { buildArgs, dockerfile } = actionInput;
+  await checkIfEcrImageExists(repo, imageTag);
 
-  await checkIfEcrImageExists(repository, build.imageTag);
-  const regRepoImg = `${registry}/${repository}:${imageTag}`;
-  const dockerBuild = `build ${buildArgs} `
-    + `-t ${regRepoImg} `
-    + `-f ./${dockerfile} .`;
+  const dockerBuild = [
+    `build ${buildArgs}`,
+    `-t ${fullImageTag(registry, build)}`,
+    target ? `--target ${target}` : '',
+    `-f ./${dockerfile}`,
+    '.'
+  ].join(' ');
   await docker.command(dockerBuild);
 }
 
@@ -30,10 +43,7 @@ export async function publishDocker(
   registry: string,
   build: DockerBuild,
 ) {
-  const { imageTag } = build;
-  const { repository } = actionInput;
-  const regRepoImg = `${registry}/${repository}:${imageTag}`;
-  await docker.command(`push ${regRepoImg}`);
+  await docker.command(`push ${fullImageTag(registry, build)}`);
 }
 
 function setBuildKitEnv() {

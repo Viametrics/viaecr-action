@@ -10,15 +10,17 @@ async function run(): Promise<void> {
   const registry: string = await getEcrRegistry();
   const imageTag: string = createImageTag();
 
-  // TODO This is a placeholder before enabling multi-target builds.
   const docker: Docker = new Docker();
-  const builds: DockerBuild[] = [
-    { imageTag: imageTag },
-  ];
+  const builds: DockerBuild[] = actionInput.targets.map((targetInput) => {
+    return {
+      imageTag: imageTag,
+      ...targetInput
+    };
+  });
 
   // Build all images before publishing, to reduce likelihood of partial success
   for (const build of builds) {
-    await buildDocker(docker, registry, build);
+    await buildDocker(docker, registry, imageTag, build);
   }
 
   // If ay of the images fail to publish, the run will be marked as failed,

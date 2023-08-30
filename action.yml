@@ -1,8 +1,8 @@
 name: "Build Server and Push to ECR"
 description: "Builds a Docker image, tags it and pushes to ECR"
 inputs:
-  repository:
-    description: "ECR Repository name"
+  targets:
+    description: "List of targets to build, and repositories to push them"
     required: true
   build-args:
     description: "JSON with build args to pass to Docker"
