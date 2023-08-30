@@ -57,6 +57,10 @@ function parseBuildArgs() {
         return "";
     }
 }
+function getInputAsBoolean(name) {
+    let input = core.getInput(name).toLowerCase();
+    return input === "true" || input === "1" || input === "yes" || input === "y";
+}
 exports.actionInput = {
     awsAccessKeyId: getEnv("AWS_ACCESS_KEY_ID"),
     awsSecretAccessKey: getEnv("AWS_SECRET_ACCESS_KEY"),
@@ -64,6 +68,7 @@ exports.actionInput = {
     repository: core.getInput("repository"),
     dockerfile: core.getInput("dockerfile"),
     tagPrefix: core.getInput("tag-prefix"),
+    disableBuildkit: getInputAsBoolean("disable-buildkit"),
     buildArgs: parseBuildArgs(),
 };
 
@@ -186,6 +191,8 @@ function run() {
         // Build and push image
         const regRepoImg = `${registry}/${repository}:${imageTag}`;
         const dockerBuild = `build ${action_input_1.actionInput.buildArgs} -t ${regRepoImg} -f ./${dockerfile} .`;
+        // Enable or disable buildkit
+        core.exportVariable("DOCKER_BUILDKIT", action_input_1.actionInput.disableBuildkit ? "0" : "1");
         const docker = new docker_cli_js_1.Docker();
         yield docker.command(dockerBuild);
         yield docker.command(`push ${regRepoImg}`);

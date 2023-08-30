@@ -1,6 +1,6 @@
 {
-	"extends": ["plugin:prettier/recommended", "prettier"],
-	"rules": {
-		"prettier/prettier": "warn"
-	}
+  "extends": ["plugin:prettier/recommended", "prettier"],
+  "rules": {
+    "prettier/prettier": "warn"
+  }
 }
