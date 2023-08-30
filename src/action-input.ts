@@ -18,7 +18,7 @@ function getEnv(name: string): string {
 
 function parseBuildArgs(): string {
 	try {
-		const raw = core.getInput("buildArgs");
+		const raw = core.getInput("build-args");
 		if (!raw) return "";
 
 		return Object.entries(JSON.parse(raw))
@@ -41,11 +41,6 @@ export const actionInput: ActionInput = {
 	awsRegion: getEnv("AWS_REGION"),
 	repository: core.getInput("repository"),
 	dockerfile: core.getInput("dockerfile"),
-	tagPrefix: core.getInput("tagPrefix"),
+	tagPrefix: core.getInput("tag-prefix"),
 	buildArgs: parseBuildArgs(),
-};
-
-export const awsCredentials = {
-	accessKeyId: core.getInput("awsAccessKeyId"),
-	secretAccessKey: core.getInput("awsSecretAccessKey"),
 };
