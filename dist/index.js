@@ -137,6 +137,76 @@ exports.checkIfEcrImageExists = checkIfEcrImageExists;
 
 /***/ }),
 
+/***/ 16599:
+/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+
+"use strict";
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.publishDocker = exports.buildDocker = void 0;
+const action_input_1 = __nccwpck_require__(3640);
+const aws_utils_1 = __nccwpck_require__(70598);
+const core = __importStar(__nccwpck_require__(42186));
+function buildDocker(docker, registry, build) {
+    return __awaiter(this, void 0, void 0, function* () {
+        setBuildKitEnv();
+        const { imageTag } = build;
+        const { repository, buildArgs, dockerfile } = action_input_1.actionInput;
+        yield (0, aws_utils_1.checkIfEcrImageExists)(repository, build.imageTag);
+        const regRepoImg = `${registry}/${repository}:${imageTag}`;
+        const dockerBuild = `build ${buildArgs} -t ${regRepoImg} -f ./${dockerfile} .`;
+        yield docker.command(dockerBuild);
+    });
+}
+exports.buildDocker = buildDocker;
+function publishDocker(docker, registry, build) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const { imageTag } = build;
+        const { repository } = action_input_1.actionInput;
+        const regRepoImg = `${registry}/${repository}:${imageTag}`;
+        yield docker.command(`push ${regRepoImg}`);
+    });
+}
+exports.publishDocker = publishDocker;
+function setBuildKitEnv() {
+    core.exportVariable("DOCKER_BUILDKIT", action_input_1.actionInput.disableBuildkit ? "0" : "1");
+}
+
+
+/***/ }),
+
 /***/ 3109:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
@@ -181,21 +251,38 @@ const aws_utils_1 = __nccwpck_require__(70598);
 const date_fns_1 = __nccwpck_require__(73314);
 const docker_cli_js_1 = __nccwpck_require__(95771);
 const action_input_1 = __nccwpck_require__(3640);
+const docker_utils_1 = __nccwpck_require__(16599);
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         const registry = yield (0, aws_utils_1.getEcrRegistry)();
-        const dockerfile = action_input_1.actionInput.dockerfile;
-        const repository = action_input_1.actionInput.repository;
         const imageTag = createImageTag();
-        yield (0, aws_utils_1.checkIfEcrImageExists)(repository, imageTag);
-        // Build and push image
-        const regRepoImg = `${registry}/${repository}:${imageTag}`;
-        const dockerBuild = `build ${action_input_1.actionInput.buildArgs} -t ${regRepoImg} -f ./${dockerfile} .`;
-        // Enable or disable buildkit
-        core.exportVariable("DOCKER_BUILDKIT", action_input_1.actionInput.disableBuildkit ? "0" : "1");
+        // TODO This is a placeholder before enabling multi-target builds.
         const docker = new docker_cli_js_1.Docker();
-        yield docker.command(dockerBuild);
-        yield docker.command(`push ${regRepoImg}`);
+        const builds = [
+            { imageTag: imageTag },
+        ];
+        // Build all images before publishing, to reduce likelihood of partial success
+        for (const build of builds) {
+            yield (0, docker_utils_1.buildDocker)(docker, registry, build);
+        }
+        // If ay of the images fail to publish, the run will be marked as failed,
+        // but the remaining images will still be uploaded.
+        // This will allow the action to recover from a previous failure by uploading
+        // the remaining images, even in cases where image tags are immutable (which
+        // will make images that have succeeded in previous runs to fail).
+        let hasErrors = false;
+        for (const build of builds) {
+            try {
+                yield (0, docker_utils_1.publishDocker)(docker, registry, build);
+            }
+            catch (e) {
+                core.error(e.message);
+                hasErrors = true;
+            }
+        }
+        if (hasErrors) {
+            core.setFailed("Failed to publish Docker image");
+        }
     });
 }
 function createImageTag() {
