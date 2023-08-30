@@ -4,10 +4,10 @@ inputs:
   repository:
     description: "ECR Repository name"
     required: true
-  buildArgs:
+  build-args:
     description: "JSON with build args to pass to Docker"
     required: false
-  tagPrefix:
+  tag-prefix:
     description: "Add a prefix to the image tag"
     default: ""
   dockerfile:

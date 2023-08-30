@@ -30,7 +30,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.awsCredentials = exports.actionInput = void 0;
+exports.actionInput = void 0;
 const core = __importStar(__nccwpck_require__(42186));
 function getEnv(name) {
     const value = process.env[name];
@@ -40,7 +40,7 @@ function getEnv(name) {
 }
 function parseBuildArgs() {
     try {
-        const raw = core.getInput("buildArgs");
+        const raw = core.getInput("build-args");
         if (!raw)
             return "";
         return Object.entries(JSON.parse(raw))
@@ -63,12 +63,8 @@ exports.actionInput = {
     awsRegion: getEnv("AWS_REGION"),
     repository: core.getInput("repository"),
     dockerfile: core.getInput("dockerfile"),
-    tagPrefix: core.getInput("tagPrefix"),
+    tagPrefix: core.getInput("tag-prefix"),
     buildArgs: parseBuildArgs(),
-};
-exports.awsCredentials = {
-    accessKeyId: core.getInput("awsAccessKeyId"),
-    secretAccessKey: core.getInput("awsSecretAccessKey"),
 };
 
 
