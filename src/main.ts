@@ -3,20 +3,16 @@ import { context } from "@actions/github";
 import { getEcrRegistry } from "./aws-utils";
 import { format } from "date-fns";
 import { Docker } from "docker-cli-js";
-import { actionInput } from "./action-input";
+import {actionInput, TargetInput} from './action-input'
 import {buildDocker, DockerBuild, publishDocker} from './docker-utils'
 
 async function run(): Promise<void> {
   const registry: string = await getEcrRegistry();
   const imageTag: string = createImageTag();
 
-  const docker: Docker = new Docker();
-  const builds: DockerBuild[] = actionInput.targets.map((targetInput) => {
-    return {
-      imageTag: imageTag,
-      ...targetInput
-    };
-  });
+  const docker = new Docker();
+  const builds: DockerBuild[] = actionInput.targets
+    .map((targetInput: TargetInput) => ({ imageTag, ...targetInput }));
 
   // Build all images before publishing, to reduce likelihood of partial success
   for (const build of builds) {
@@ -28,7 +24,7 @@ async function run(): Promise<void> {
   // This will allow the action to recover from a previous failure by uploading
   // the remaining images, even in cases where image tags are immutable (which
   // will make images that have succeeded in previous runs to fail).
-  let hasErrors = false;
+  let hasErrors: boolean = false;
   for (const build of builds) {
     try {
       await publishDocker(docker, registry, build);

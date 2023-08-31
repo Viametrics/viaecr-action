@@ -299,9 +299,8 @@ function run() {
         const registry = yield (0, aws_utils_1.getEcrRegistry)();
         const imageTag = createImageTag();
         const docker = new docker_cli_js_1.Docker();
-        const builds = action_input_1.actionInput.targets.map((targetInput) => {
-            return Object.assign({ imageTag: imageTag }, targetInput);
-        });
+        const builds = action_input_1.actionInput.targets
+            .map((targetInput) => (Object.assign({ imageTag }, targetInput)));
         // Build all images before publishing, to reduce likelihood of partial success
         for (const build of builds) {
             yield (0, docker_utils_1.buildDocker)(docker, registry, imageTag, build);
