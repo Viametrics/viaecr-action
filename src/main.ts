@@ -23,7 +23,7 @@ async function run(): Promise<void> {
     await buildDocker(docker, registry, imageTag, build);
   }
 
-  // If ay of the images fail to publish, the run will be marked as failed,
+  // If any of the images fail to publish, the run will be marked as failed,
   // but the remaining images will still be uploaded.
   // This will allow the action to recover from a previous failure by uploading
   // the remaining images, even in cases where image tags are immutable (which
