@@ -3,8 +3,8 @@ import { context } from "@actions/github";
 import { getEcrRegistry } from "./aws-utils";
 import { format } from "date-fns";
 import { Docker } from "docker-cli-js";
-import {actionInput, TargetInput} from './action-input'
-import {buildDocker, DockerBuild, publishDocker} from './docker-utils'
+import { actionInput, TargetInput } from './action-input'
+import { buildDocker, DockerBuild, publishDocker } from './docker-utils'
 
 async function run(): Promise<void> {
   const registry: string = await getEcrRegistry();

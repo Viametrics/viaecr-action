@@ -1,6 +1,6 @@
-import {Docker} from 'docker-cli-js'
-import {actionInput} from './action-input'
-import {checkIfEcrImageExists} from './aws-utils'
+import { Docker } from 'docker-cli-js'
+import { actionInput } from './action-input'
+import { checkIfEcrImageExists } from './aws-utils'
 import * as core from '@actions/core'
 
 export interface DockerBuild {
