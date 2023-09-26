@@ -2756,6 +2756,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class BatchCheckLayerAvailabilityCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -2783,6 +2784,10 @@ class BatchCheckLayerAvailabilityCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "BatchCheckLayerAvailability",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -2810,6 +2815,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class BatchDeleteImageCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -2837,6 +2843,10 @@ class BatchDeleteImageCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "BatchDeleteImage",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -2864,6 +2874,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class BatchGetImageCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -2891,6 +2902,10 @@ class BatchGetImageCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "BatchGetImage",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -2918,6 +2933,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class BatchGetRepositoryScanningConfigurationCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -2945,6 +2961,10 @@ class BatchGetRepositoryScanningConfigurationCommand extends smithy_client_1.Com
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "BatchGetRepositoryScanningConfiguration",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -2972,6 +2992,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class CompleteLayerUploadCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -2999,6 +3020,10 @@ class CompleteLayerUploadCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "CompleteLayerUpload",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -3026,6 +3051,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class CreatePullThroughCacheRuleCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -3053,6 +3079,10 @@ class CreatePullThroughCacheRuleCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "CreatePullThroughCacheRule",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -3080,6 +3110,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class CreateRepositoryCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -3107,6 +3138,10 @@ class CreateRepositoryCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "CreateRepository",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -3134,6 +3169,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class DeleteLifecyclePolicyCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -3161,6 +3197,10 @@ class DeleteLifecyclePolicyCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "DeleteLifecyclePolicy",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -3188,6 +3228,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class DeletePullThroughCacheRuleCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -3215,6 +3256,10 @@ class DeletePullThroughCacheRuleCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "DeletePullThroughCacheRule",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -3242,6 +3287,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class DeleteRegistryPolicyCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -3269,6 +3315,10 @@ class DeleteRegistryPolicyCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "DeleteRegistryPolicy",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -3296,6 +3346,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class DeleteRepositoryCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -3323,6 +3374,10 @@ class DeleteRepositoryCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "DeleteRepository",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -3350,6 +3405,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class DeleteRepositoryPolicyCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -3377,6 +3433,10 @@ class DeleteRepositoryPolicyCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "DeleteRepositoryPolicy",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -3404,6 +3464,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class DescribeImageReplicationStatusCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -3431,6 +3492,10 @@ class DescribeImageReplicationStatusCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "DescribeImageReplicationStatus",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -3458,6 +3523,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class DescribeImageScanFindingsCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -3485,6 +3551,10 @@ class DescribeImageScanFindingsCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "DescribeImageScanFindings",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -3512,6 +3582,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class DescribeImagesCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -3539,6 +3610,10 @@ class DescribeImagesCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "DescribeImages",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -3566,6 +3641,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class DescribePullThroughCacheRulesCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -3593,6 +3669,10 @@ class DescribePullThroughCacheRulesCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "DescribePullThroughCacheRules",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -3620,6 +3700,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class DescribeRegistryCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -3647,6 +3728,10 @@ class DescribeRegistryCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "DescribeRegistry",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -3674,6 +3759,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class DescribeRepositoriesCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -3701,6 +3787,10 @@ class DescribeRepositoriesCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "DescribeRepositories",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -3728,6 +3818,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class GetAuthorizationTokenCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -3755,6 +3846,10 @@ class GetAuthorizationTokenCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "GetAuthorizationToken",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -3782,6 +3877,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class GetDownloadUrlForLayerCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -3809,6 +3905,10 @@ class GetDownloadUrlForLayerCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "GetDownloadUrlForLayer",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -3836,6 +3936,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class GetLifecyclePolicyCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -3863,6 +3964,10 @@ class GetLifecyclePolicyCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "GetLifecyclePolicy",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -3890,6 +3995,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class GetLifecyclePolicyPreviewCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -3917,6 +4023,10 @@ class GetLifecyclePolicyPreviewCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "GetLifecyclePolicyPreview",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -3944,6 +4054,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class GetRegistryPolicyCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -3971,6 +4082,10 @@ class GetRegistryPolicyCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "GetRegistryPolicy",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -3998,6 +4113,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class GetRegistryScanningConfigurationCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -4025,6 +4141,10 @@ class GetRegistryScanningConfigurationCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "GetRegistryScanningConfiguration",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -4052,6 +4172,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class GetRepositoryPolicyCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -4079,6 +4200,10 @@ class GetRepositoryPolicyCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "GetRepositoryPolicy",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -4106,6 +4231,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class InitiateLayerUploadCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -4133,6 +4259,10 @@ class InitiateLayerUploadCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "InitiateLayerUpload",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -4160,6 +4290,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class ListImagesCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -4187,6 +4318,10 @@ class ListImagesCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "ListImages",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -4214,6 +4349,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class ListTagsForResourceCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -4241,6 +4377,10 @@ class ListTagsForResourceCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "ListTagsForResource",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -4268,6 +4408,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class PutImageCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -4295,6 +4436,10 @@ class PutImageCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "PutImage",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -4322,6 +4467,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class PutImageScanningConfigurationCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -4349,6 +4495,10 @@ class PutImageScanningConfigurationCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "PutImageScanningConfiguration",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -4376,6 +4526,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class PutImageTagMutabilityCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -4403,6 +4554,10 @@ class PutImageTagMutabilityCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "PutImageTagMutability",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -4430,6 +4585,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class PutLifecyclePolicyCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -4457,6 +4613,10 @@ class PutLifecyclePolicyCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "PutLifecyclePolicy",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -4484,6 +4644,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class PutRegistryPolicyCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -4511,6 +4672,10 @@ class PutRegistryPolicyCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "PutRegistryPolicy",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -4538,6 +4703,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class PutRegistryScanningConfigurationCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -4565,6 +4731,10 @@ class PutRegistryScanningConfigurationCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "PutRegistryScanningConfiguration",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -4592,6 +4762,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class PutReplicationConfigurationCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -4619,6 +4790,10 @@ class PutReplicationConfigurationCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "PutReplicationConfiguration",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -4646,6 +4821,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class SetRepositoryPolicyCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -4673,6 +4849,10 @@ class SetRepositoryPolicyCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "SetRepositoryPolicy",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -4700,6 +4880,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class StartImageScanCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -4727,6 +4908,10 @@ class StartImageScanCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "StartImageScan",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -4754,6 +4939,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class StartLifecyclePolicyPreviewCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -4781,6 +4967,10 @@ class StartLifecyclePolicyPreviewCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "StartLifecyclePolicyPreview",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -4808,6 +4998,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class TagResourceCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -4835,6 +5026,10 @@ class TagResourceCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "TagResource",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -4862,6 +5057,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class UntagResourceCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -4889,6 +5085,10 @@ class UntagResourceCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "UntagResource",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -4916,6 +5116,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
 class UploadLayerPartCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -4943,6 +5144,10 @@ class UploadLayerPartCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AmazonEC2ContainerRegistry_V20150921",
+                operation: "UploadLayerPart",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -9401,6 +9606,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const models_0_1 = __nccwpck_require__(66390);
 const Aws_restJson1_1 = __nccwpck_require__(98507);
 class GetRoleCredentialsCommand extends smithy_client_1.Command {
@@ -9429,6 +9635,10 @@ class GetRoleCredentialsCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: models_0_1.GetRoleCredentialsRequestFilterSensitiveLog,
             outputFilterSensitiveLog: models_0_1.GetRoleCredentialsResponseFilterSensitiveLog,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "SWBPortalService",
+                operation: "GetRoleCredentials",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -9456,6 +9666,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const models_0_1 = __nccwpck_require__(66390);
 const Aws_restJson1_1 = __nccwpck_require__(98507);
 class ListAccountRolesCommand extends smithy_client_1.Command {
@@ -9484,6 +9695,10 @@ class ListAccountRolesCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: models_0_1.ListAccountRolesRequestFilterSensitiveLog,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "SWBPortalService",
+                operation: "ListAccountRoles",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -9511,6 +9726,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const models_0_1 = __nccwpck_require__(66390);
 const Aws_restJson1_1 = __nccwpck_require__(98507);
 class ListAccountsCommand extends smithy_client_1.Command {
@@ -9539,6 +9755,10 @@ class ListAccountsCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: models_0_1.ListAccountsRequestFilterSensitiveLog,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "SWBPortalService",
+                operation: "ListAccounts",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -9566,6 +9786,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const models_0_1 = __nccwpck_require__(66390);
 const Aws_restJson1_1 = __nccwpck_require__(98507);
 class LogoutCommand extends smithy_client_1.Command {
@@ -9594,6 +9815,10 @@ class LogoutCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: models_0_1.LogoutRequestFilterSensitiveLog,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "SWBPortalService",
+                operation: "Logout",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -10938,6 +11163,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const models_0_1 = __nccwpck_require__(21780);
 const Aws_query_1 = __nccwpck_require__(10740);
 class AssumeRoleCommand extends smithy_client_1.Command {
@@ -10968,6 +11194,10 @@ class AssumeRoleCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: models_0_1.AssumeRoleResponseFilterSensitiveLog,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AWSSecurityTokenServiceV20110615",
+                operation: "AssumeRole",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -10995,6 +11225,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const models_0_1 = __nccwpck_require__(21780);
 const Aws_query_1 = __nccwpck_require__(10740);
 class AssumeRoleWithSAMLCommand extends smithy_client_1.Command {
@@ -11024,6 +11255,10 @@ class AssumeRoleWithSAMLCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: models_0_1.AssumeRoleWithSAMLRequestFilterSensitiveLog,
             outputFilterSensitiveLog: models_0_1.AssumeRoleWithSAMLResponseFilterSensitiveLog,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AWSSecurityTokenServiceV20110615",
+                operation: "AssumeRoleWithSAML",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -11051,6 +11286,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const models_0_1 = __nccwpck_require__(21780);
 const Aws_query_1 = __nccwpck_require__(10740);
 class AssumeRoleWithWebIdentityCommand extends smithy_client_1.Command {
@@ -11080,6 +11316,10 @@ class AssumeRoleWithWebIdentityCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: models_0_1.AssumeRoleWithWebIdentityRequestFilterSensitiveLog,
             outputFilterSensitiveLog: models_0_1.AssumeRoleWithWebIdentityResponseFilterSensitiveLog,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AWSSecurityTokenServiceV20110615",
+                operation: "AssumeRoleWithWebIdentity",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -11108,6 +11348,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_query_1 = __nccwpck_require__(10740);
 class DecodeAuthorizationMessageCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -11137,6 +11378,10 @@ class DecodeAuthorizationMessageCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AWSSecurityTokenServiceV20110615",
+                operation: "DecodeAuthorizationMessage",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -11165,6 +11410,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_query_1 = __nccwpck_require__(10740);
 class GetAccessKeyInfoCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -11194,6 +11440,10 @@ class GetAccessKeyInfoCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AWSSecurityTokenServiceV20110615",
+                operation: "GetAccessKeyInfo",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -11222,6 +11472,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const Aws_query_1 = __nccwpck_require__(10740);
 class GetCallerIdentityCommand extends smithy_client_1.Command {
     static getEndpointParameterInstructions() {
@@ -11251,6 +11502,10 @@ class GetCallerIdentityCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: (_) => _,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AWSSecurityTokenServiceV20110615",
+                operation: "GetCallerIdentity",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -11279,6 +11534,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const models_0_1 = __nccwpck_require__(21780);
 const Aws_query_1 = __nccwpck_require__(10740);
 class GetFederationTokenCommand extends smithy_client_1.Command {
@@ -11309,6 +11565,10 @@ class GetFederationTokenCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: models_0_1.GetFederationTokenResponseFilterSensitiveLog,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AWSSecurityTokenServiceV20110615",
+                operation: "GetFederationToken",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -11337,6 +11597,7 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
+const types_1 = __nccwpck_require__(55756);
 const models_0_1 = __nccwpck_require__(21780);
 const Aws_query_1 = __nccwpck_require__(10740);
 class GetSessionTokenCommand extends smithy_client_1.Command {
@@ -11367,6 +11628,10 @@ class GetSessionTokenCommand extends smithy_client_1.Command {
             commandName,
             inputFilterSensitiveLog: (_) => _,
             outputFilterSensitiveLog: models_0_1.GetSessionTokenResponseFilterSensitiveLog,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                service: "AWSSecurityTokenServiceV20110615",
+                operation: "GetSessionToken",
+            },
         };
         const { requestHandler } = configuration;
         return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
@@ -30475,6 +30740,7 @@ exports.constructStack = void 0;
 const constructStack = () => {
     let absoluteEntries = [];
     let relativeEntries = [];
+    let identifyOnResolve = false;
     const entriesNameSet = new Set();
     const sort = (entries) => entries.sort((a, b) => stepWeights[b.step] - stepWeights[a.step] ||
         priorityWeights[b.priority || "normal"] - priorityWeights[a.priority || "normal"]);
@@ -30508,12 +30774,14 @@ const constructStack = () => {
         return isRemoved;
     };
     const cloneTo = (toStack) => {
+        var _a;
         absoluteEntries.forEach((entry) => {
             toStack.add(entry.middleware, { ...entry });
         });
         relativeEntries.forEach((entry) => {
             toStack.addRelativeTo(entry.middleware, { ...entry });
         });
+        (_a = toStack.identifyOnResolve) === null || _a === void 0 ? void 0 : _a.call(toStack, stack.identifyOnResolve());
         return toStack;
     };
     const expandRelativeMiddlewareList = (from) => {
@@ -30660,21 +30928,35 @@ const constructStack = () => {
             return isRemoved;
         },
         concat: (from) => {
+            var _a, _b;
             const cloned = cloneTo((0, exports.constructStack)());
             cloned.use(from);
+            cloned.identifyOnResolve(identifyOnResolve || cloned.identifyOnResolve() || ((_b = (_a = from.identifyOnResolve) === null || _a === void 0 ? void 0 : _a.call(from)) !== null && _b !== void 0 ? _b : false));
             return cloned;
         },
         applyToStack: cloneTo,
         identify: () => {
             return getMiddlewareList(true).map((mw) => {
-                return mw.name + ": " + (mw.tags || []).join(",");
+                var _a;
+                const step = (_a = mw.step) !== null && _a !== void 0 ? _a : mw.relation +
+                    " " +
+                    mw.toMiddleware;
+                return mw.name + " - " + step;
             });
+        },
+        identifyOnResolve(toggle) {
+            if (typeof toggle === "boolean")
+                identifyOnResolve = toggle;
+            return identifyOnResolve;
         },
         resolve: (handler, context) => {
             for (const middleware of getMiddlewareList()
                 .map((entry) => entry.middleware)
                 .reverse()) {
                 handler = middleware(handler, context);
+            }
+            if (identifyOnResolve) {
+                console.log(stack.identify());
             }
             return handler;
         },
@@ -91811,7 +92093,7 @@ module.exports = _unsupportedIterableToArray, module.exports.__esModule = true, 
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"@aws-sdk/client-ecr","description":"AWS SDK for JavaScript Ecr Client for Node.js, Browser and React Native","version":"3.414.0","scripts":{"build":"concurrently \'yarn:build:cjs\' \'yarn:build:es\' \'yarn:build:types\'","build:cjs":"tsc -p tsconfig.cjs.json","build:docs":"typedoc","build:es":"tsc -p tsconfig.es.json","build:include:deps":"lerna run --scope $npm_package_name --include-dependencies build","build:types":"tsc -p tsconfig.types.json","build:types:downlevel":"downlevel-dts dist-types dist-types/ts3.4","clean":"rimraf ./dist-* && rimraf *.tsbuildinfo","extract:docs":"api-extractor run --local","generate:client":"node ../../scripts/generate-clients/single-service --solo ecr"},"main":"./dist-cjs/index.js","types":"./dist-types/index.d.ts","module":"./dist-es/index.js","sideEffects":false,"dependencies":{"@aws-crypto/sha256-browser":"3.0.0","@aws-crypto/sha256-js":"3.0.0","@aws-sdk/client-sts":"3.414.0","@aws-sdk/credential-provider-node":"3.414.0","@aws-sdk/middleware-host-header":"3.413.0","@aws-sdk/middleware-logger":"3.413.0","@aws-sdk/middleware-recursion-detection":"3.413.0","@aws-sdk/middleware-signing":"3.413.0","@aws-sdk/middleware-user-agent":"3.413.0","@aws-sdk/region-config-resolver":"3.413.0","@aws-sdk/types":"3.413.0","@aws-sdk/util-endpoints":"3.413.0","@aws-sdk/util-user-agent-browser":"3.413.0","@aws-sdk/util-user-agent-node":"3.413.0","@smithy/config-resolver":"^2.0.8","@smithy/fetch-http-handler":"^2.1.3","@smithy/hash-node":"^2.0.7","@smithy/invalid-dependency":"^2.0.7","@smithy/middleware-content-length":"^2.0.9","@smithy/middleware-endpoint":"^2.0.7","@smithy/middleware-retry":"^2.0.10","@smithy/middleware-serde":"^2.0.7","@smithy/middleware-stack":"^2.0.0","@smithy/node-config-provider":"^2.0.10","@smithy/node-http-handler":"^2.1.3","@smithy/protocol-http":"^3.0.3","@smithy/smithy-client":"^2.1.4","@smithy/types":"^2.3.1","@smithy/url-parser":"^2.0.7","@smithy/util-base64":"^2.0.0","@smithy/util-body-length-browser":"^2.0.0","@smithy/util-body-length-node":"^2.1.0","@smithy/util-defaults-mode-browser":"^2.0.8","@smithy/util-defaults-mode-node":"^2.0.10","@smithy/util-retry":"^2.0.0","@smithy/util-utf8":"^2.0.0","@smithy/util-waiter":"^2.0.7","tslib":"^2.5.0"},"devDependencies":{"@smithy/service-client-documentation-generator":"^2.0.0","@tsconfig/node14":"1.0.3","@types/node":"^14.14.31","concurrently":"7.0.0","downlevel-dts":"0.10.1","rimraf":"3.0.2","typedoc":"0.23.23","typescript":"~4.9.5"},"engines":{"node":">=14.0.0"},"typesVersions":{"<4.0":{"dist-types/*":["dist-types/ts3.4/*"]}},"files":["dist-*/**"],"author":{"name":"AWS SDK for JavaScript Team","url":"https://aws.amazon.com/javascript/"},"license":"Apache-2.0","browser":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.browser"},"react-native":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.native"},"homepage":"https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-ecr","repository":{"type":"git","url":"https://github.com/aws/aws-sdk-js-v3.git","directory":"clients/client-ecr"}}');
+module.exports = JSON.parse('{"name":"@aws-sdk/client-ecr","description":"AWS SDK for JavaScript Ecr Client for Node.js, Browser and React Native","version":"3.418.0","scripts":{"build":"concurrently \'yarn:build:cjs\' \'yarn:build:es\' \'yarn:build:types\'","build:cjs":"tsc -p tsconfig.cjs.json","build:docs":"typedoc","build:es":"tsc -p tsconfig.es.json","build:include:deps":"lerna run --scope $npm_package_name --include-dependencies build","build:types":"tsc -p tsconfig.types.json","build:types:downlevel":"downlevel-dts dist-types dist-types/ts3.4","clean":"rimraf ./dist-* && rimraf *.tsbuildinfo","extract:docs":"api-extractor run --local","generate:client":"node ../../scripts/generate-clients/single-service --solo ecr"},"main":"./dist-cjs/index.js","types":"./dist-types/index.d.ts","module":"./dist-es/index.js","sideEffects":false,"dependencies":{"@aws-crypto/sha256-browser":"3.0.0","@aws-crypto/sha256-js":"3.0.0","@aws-sdk/client-sts":"3.418.0","@aws-sdk/credential-provider-node":"3.418.0","@aws-sdk/middleware-host-header":"3.418.0","@aws-sdk/middleware-logger":"3.418.0","@aws-sdk/middleware-recursion-detection":"3.418.0","@aws-sdk/middleware-signing":"3.418.0","@aws-sdk/middleware-user-agent":"3.418.0","@aws-sdk/region-config-resolver":"3.418.0","@aws-sdk/types":"3.418.0","@aws-sdk/util-endpoints":"3.418.0","@aws-sdk/util-user-agent-browser":"3.418.0","@aws-sdk/util-user-agent-node":"3.418.0","@smithy/config-resolver":"^2.0.10","@smithy/fetch-http-handler":"^2.1.5","@smithy/hash-node":"^2.0.9","@smithy/invalid-dependency":"^2.0.9","@smithy/middleware-content-length":"^2.0.11","@smithy/middleware-endpoint":"^2.0.9","@smithy/middleware-retry":"^2.0.12","@smithy/middleware-serde":"^2.0.9","@smithy/middleware-stack":"^2.0.2","@smithy/node-config-provider":"^2.0.12","@smithy/node-http-handler":"^2.1.5","@smithy/protocol-http":"^3.0.5","@smithy/smithy-client":"^2.1.6","@smithy/types":"^2.3.3","@smithy/url-parser":"^2.0.9","@smithy/util-base64":"^2.0.0","@smithy/util-body-length-browser":"^2.0.0","@smithy/util-body-length-node":"^2.1.0","@smithy/util-defaults-mode-browser":"^2.0.10","@smithy/util-defaults-mode-node":"^2.0.12","@smithy/util-retry":"^2.0.2","@smithy/util-utf8":"^2.0.0","@smithy/util-waiter":"^2.0.9","tslib":"^2.5.0"},"devDependencies":{"@smithy/service-client-documentation-generator":"^2.0.0","@tsconfig/node14":"1.0.3","@types/node":"^14.14.31","concurrently":"7.0.0","downlevel-dts":"0.10.1","rimraf":"3.0.2","typedoc":"0.23.23","typescript":"~4.9.5"},"engines":{"node":">=14.0.0"},"typesVersions":{"<4.0":{"dist-types/*":["dist-types/ts3.4/*"]}},"files":["dist-*/**"],"author":{"name":"AWS SDK for JavaScript Team","url":"https://aws.amazon.com/javascript/"},"license":"Apache-2.0","browser":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.browser"},"react-native":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.native"},"homepage":"https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-ecr","repository":{"type":"git","url":"https://github.com/aws/aws-sdk-js-v3.git","directory":"clients/client-ecr"}}');
 
 /***/ }),
 
@@ -91819,7 +92101,7 @@ module.exports = JSON.parse('{"name":"@aws-sdk/client-ecr","description":"AWS SD
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"@aws-sdk/client-sso","description":"AWS SDK for JavaScript Sso Client for Node.js, Browser and React Native","version":"3.414.0","scripts":{"build":"concurrently \'yarn:build:cjs\' \'yarn:build:es\' \'yarn:build:types\'","build:cjs":"tsc -p tsconfig.cjs.json","build:docs":"typedoc","build:es":"tsc -p tsconfig.es.json","build:include:deps":"lerna run --scope $npm_package_name --include-dependencies build","build:types":"tsc -p tsconfig.types.json","build:types:downlevel":"downlevel-dts dist-types dist-types/ts3.4","clean":"rimraf ./dist-* && rimraf *.tsbuildinfo","extract:docs":"api-extractor run --local","generate:client":"node ../../scripts/generate-clients/single-service --solo sso"},"main":"./dist-cjs/index.js","types":"./dist-types/index.d.ts","module":"./dist-es/index.js","sideEffects":false,"dependencies":{"@aws-crypto/sha256-browser":"3.0.0","@aws-crypto/sha256-js":"3.0.0","@aws-sdk/middleware-host-header":"3.413.0","@aws-sdk/middleware-logger":"3.413.0","@aws-sdk/middleware-recursion-detection":"3.413.0","@aws-sdk/middleware-user-agent":"3.413.0","@aws-sdk/region-config-resolver":"3.413.0","@aws-sdk/types":"3.413.0","@aws-sdk/util-endpoints":"3.413.0","@aws-sdk/util-user-agent-browser":"3.413.0","@aws-sdk/util-user-agent-node":"3.413.0","@smithy/config-resolver":"^2.0.8","@smithy/fetch-http-handler":"^2.1.3","@smithy/hash-node":"^2.0.7","@smithy/invalid-dependency":"^2.0.7","@smithy/middleware-content-length":"^2.0.9","@smithy/middleware-endpoint":"^2.0.7","@smithy/middleware-retry":"^2.0.10","@smithy/middleware-serde":"^2.0.7","@smithy/middleware-stack":"^2.0.0","@smithy/node-config-provider":"^2.0.10","@smithy/node-http-handler":"^2.1.3","@smithy/protocol-http":"^3.0.3","@smithy/smithy-client":"^2.1.4","@smithy/types":"^2.3.1","@smithy/url-parser":"^2.0.7","@smithy/util-base64":"^2.0.0","@smithy/util-body-length-browser":"^2.0.0","@smithy/util-body-length-node":"^2.1.0","@smithy/util-defaults-mode-browser":"^2.0.8","@smithy/util-defaults-mode-node":"^2.0.10","@smithy/util-retry":"^2.0.0","@smithy/util-utf8":"^2.0.0","tslib":"^2.5.0"},"devDependencies":{"@smithy/service-client-documentation-generator":"^2.0.0","@tsconfig/node14":"1.0.3","@types/node":"^14.14.31","concurrently":"7.0.0","downlevel-dts":"0.10.1","rimraf":"3.0.2","typedoc":"0.23.23","typescript":"~4.9.5"},"engines":{"node":">=14.0.0"},"typesVersions":{"<4.0":{"dist-types/*":["dist-types/ts3.4/*"]}},"files":["dist-*/**"],"author":{"name":"AWS SDK for JavaScript Team","url":"https://aws.amazon.com/javascript/"},"license":"Apache-2.0","browser":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.browser"},"react-native":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.native"},"homepage":"https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-sso","repository":{"type":"git","url":"https://github.com/aws/aws-sdk-js-v3.git","directory":"clients/client-sso"}}');
+module.exports = JSON.parse('{"name":"@aws-sdk/client-sso","description":"AWS SDK for JavaScript Sso Client for Node.js, Browser and React Native","version":"3.418.0","scripts":{"build":"concurrently \'yarn:build:cjs\' \'yarn:build:es\' \'yarn:build:types\'","build:cjs":"tsc -p tsconfig.cjs.json","build:docs":"typedoc","build:es":"tsc -p tsconfig.es.json","build:include:deps":"lerna run --scope $npm_package_name --include-dependencies build","build:types":"tsc -p tsconfig.types.json","build:types:downlevel":"downlevel-dts dist-types dist-types/ts3.4","clean":"rimraf ./dist-* && rimraf *.tsbuildinfo","extract:docs":"api-extractor run --local","generate:client":"node ../../scripts/generate-clients/single-service --solo sso"},"main":"./dist-cjs/index.js","types":"./dist-types/index.d.ts","module":"./dist-es/index.js","sideEffects":false,"dependencies":{"@aws-crypto/sha256-browser":"3.0.0","@aws-crypto/sha256-js":"3.0.0","@aws-sdk/middleware-host-header":"3.418.0","@aws-sdk/middleware-logger":"3.418.0","@aws-sdk/middleware-recursion-detection":"3.418.0","@aws-sdk/middleware-user-agent":"3.418.0","@aws-sdk/region-config-resolver":"3.418.0","@aws-sdk/types":"3.418.0","@aws-sdk/util-endpoints":"3.418.0","@aws-sdk/util-user-agent-browser":"3.418.0","@aws-sdk/util-user-agent-node":"3.418.0","@smithy/config-resolver":"^2.0.10","@smithy/fetch-http-handler":"^2.1.5","@smithy/hash-node":"^2.0.9","@smithy/invalid-dependency":"^2.0.9","@smithy/middleware-content-length":"^2.0.11","@smithy/middleware-endpoint":"^2.0.9","@smithy/middleware-retry":"^2.0.12","@smithy/middleware-serde":"^2.0.9","@smithy/middleware-stack":"^2.0.2","@smithy/node-config-provider":"^2.0.12","@smithy/node-http-handler":"^2.1.5","@smithy/protocol-http":"^3.0.5","@smithy/smithy-client":"^2.1.6","@smithy/types":"^2.3.3","@smithy/url-parser":"^2.0.9","@smithy/util-base64":"^2.0.0","@smithy/util-body-length-browser":"^2.0.0","@smithy/util-body-length-node":"^2.1.0","@smithy/util-defaults-mode-browser":"^2.0.10","@smithy/util-defaults-mode-node":"^2.0.12","@smithy/util-retry":"^2.0.2","@smithy/util-utf8":"^2.0.0","tslib":"^2.5.0"},"devDependencies":{"@smithy/service-client-documentation-generator":"^2.0.0","@tsconfig/node14":"1.0.3","@types/node":"^14.14.31","concurrently":"7.0.0","downlevel-dts":"0.10.1","rimraf":"3.0.2","typedoc":"0.23.23","typescript":"~4.9.5"},"engines":{"node":">=14.0.0"},"typesVersions":{"<4.0":{"dist-types/*":["dist-types/ts3.4/*"]}},"files":["dist-*/**"],"author":{"name":"AWS SDK for JavaScript Team","url":"https://aws.amazon.com/javascript/"},"license":"Apache-2.0","browser":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.browser"},"react-native":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.native"},"homepage":"https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-sso","repository":{"type":"git","url":"https://github.com/aws/aws-sdk-js-v3.git","directory":"clients/client-sso"}}');
 
 /***/ }),
 
@@ -91827,7 +92109,7 @@ module.exports = JSON.parse('{"name":"@aws-sdk/client-sso","description":"AWS SD
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"@aws-sdk/client-sts","description":"AWS SDK for JavaScript Sts Client for Node.js, Browser and React Native","version":"3.414.0","scripts":{"build":"concurrently \'yarn:build:cjs\' \'yarn:build:es\' \'yarn:build:types\'","build:cjs":"tsc -p tsconfig.cjs.json","build:docs":"typedoc","build:es":"tsc -p tsconfig.es.json","build:include:deps":"lerna run --scope $npm_package_name --include-dependencies build","build:types":"tsc -p tsconfig.types.json","build:types:downlevel":"downlevel-dts dist-types dist-types/ts3.4","clean":"rimraf ./dist-* && rimraf *.tsbuildinfo","extract:docs":"api-extractor run --local","generate:client":"node ../../scripts/generate-clients/single-service --solo sts","test":"yarn test:unit","test:unit":"jest"},"main":"./dist-cjs/index.js","types":"./dist-types/index.d.ts","module":"./dist-es/index.js","sideEffects":false,"dependencies":{"@aws-crypto/sha256-browser":"3.0.0","@aws-crypto/sha256-js":"3.0.0","@aws-sdk/credential-provider-node":"3.414.0","@aws-sdk/middleware-host-header":"3.413.0","@aws-sdk/middleware-logger":"3.413.0","@aws-sdk/middleware-recursion-detection":"3.413.0","@aws-sdk/middleware-sdk-sts":"3.413.0","@aws-sdk/middleware-signing":"3.413.0","@aws-sdk/middleware-user-agent":"3.413.0","@aws-sdk/region-config-resolver":"3.413.0","@aws-sdk/types":"3.413.0","@aws-sdk/util-endpoints":"3.413.0","@aws-sdk/util-user-agent-browser":"3.413.0","@aws-sdk/util-user-agent-node":"3.413.0","@smithy/config-resolver":"^2.0.8","@smithy/fetch-http-handler":"^2.1.3","@smithy/hash-node":"^2.0.7","@smithy/invalid-dependency":"^2.0.7","@smithy/middleware-content-length":"^2.0.9","@smithy/middleware-endpoint":"^2.0.7","@smithy/middleware-retry":"^2.0.10","@smithy/middleware-serde":"^2.0.7","@smithy/middleware-stack":"^2.0.0","@smithy/node-config-provider":"^2.0.10","@smithy/node-http-handler":"^2.1.3","@smithy/protocol-http":"^3.0.3","@smithy/smithy-client":"^2.1.4","@smithy/types":"^2.3.1","@smithy/url-parser":"^2.0.7","@smithy/util-base64":"^2.0.0","@smithy/util-body-length-browser":"^2.0.0","@smithy/util-body-length-node":"^2.1.0","@smithy/util-defaults-mode-browser":"^2.0.8","@smithy/util-defaults-mode-node":"^2.0.10","@smithy/util-retry":"^2.0.0","@smithy/util-utf8":"^2.0.0","fast-xml-parser":"4.2.5","tslib":"^2.5.0"},"devDependencies":{"@smithy/service-client-documentation-generator":"^2.0.0","@tsconfig/node14":"1.0.3","@types/node":"^14.14.31","concurrently":"7.0.0","downlevel-dts":"0.10.1","rimraf":"3.0.2","typedoc":"0.23.23","typescript":"~4.9.5"},"engines":{"node":">=14.0.0"},"typesVersions":{"<4.0":{"dist-types/*":["dist-types/ts3.4/*"]}},"files":["dist-*/**"],"author":{"name":"AWS SDK for JavaScript Team","url":"https://aws.amazon.com/javascript/"},"license":"Apache-2.0","browser":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.browser"},"react-native":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.native"},"homepage":"https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-sts","repository":{"type":"git","url":"https://github.com/aws/aws-sdk-js-v3.git","directory":"clients/client-sts"}}');
+module.exports = JSON.parse('{"name":"@aws-sdk/client-sts","description":"AWS SDK for JavaScript Sts Client for Node.js, Browser and React Native","version":"3.418.0","scripts":{"build":"concurrently \'yarn:build:cjs\' \'yarn:build:es\' \'yarn:build:types\'","build:cjs":"tsc -p tsconfig.cjs.json","build:docs":"typedoc","build:es":"tsc -p tsconfig.es.json","build:include:deps":"lerna run --scope $npm_package_name --include-dependencies build","build:types":"tsc -p tsconfig.types.json","build:types:downlevel":"downlevel-dts dist-types dist-types/ts3.4","clean":"rimraf ./dist-* && rimraf *.tsbuildinfo","extract:docs":"api-extractor run --local","generate:client":"node ../../scripts/generate-clients/single-service --solo sts","test":"yarn test:unit","test:unit":"jest"},"main":"./dist-cjs/index.js","types":"./dist-types/index.d.ts","module":"./dist-es/index.js","sideEffects":false,"dependencies":{"@aws-crypto/sha256-browser":"3.0.0","@aws-crypto/sha256-js":"3.0.0","@aws-sdk/credential-provider-node":"3.418.0","@aws-sdk/middleware-host-header":"3.418.0","@aws-sdk/middleware-logger":"3.418.0","@aws-sdk/middleware-recursion-detection":"3.418.0","@aws-sdk/middleware-sdk-sts":"3.418.0","@aws-sdk/middleware-signing":"3.418.0","@aws-sdk/middleware-user-agent":"3.418.0","@aws-sdk/region-config-resolver":"3.418.0","@aws-sdk/types":"3.418.0","@aws-sdk/util-endpoints":"3.418.0","@aws-sdk/util-user-agent-browser":"3.418.0","@aws-sdk/util-user-agent-node":"3.418.0","@smithy/config-resolver":"^2.0.10","@smithy/fetch-http-handler":"^2.1.5","@smithy/hash-node":"^2.0.9","@smithy/invalid-dependency":"^2.0.9","@smithy/middleware-content-length":"^2.0.11","@smithy/middleware-endpoint":"^2.0.9","@smithy/middleware-retry":"^2.0.12","@smithy/middleware-serde":"^2.0.9","@smithy/middleware-stack":"^2.0.2","@smithy/node-config-provider":"^2.0.12","@smithy/node-http-handler":"^2.1.5","@smithy/protocol-http":"^3.0.5","@smithy/smithy-client":"^2.1.6","@smithy/types":"^2.3.3","@smithy/url-parser":"^2.0.9","@smithy/util-base64":"^2.0.0","@smithy/util-body-length-browser":"^2.0.0","@smithy/util-body-length-node":"^2.1.0","@smithy/util-defaults-mode-browser":"^2.0.10","@smithy/util-defaults-mode-node":"^2.0.12","@smithy/util-retry":"^2.0.2","@smithy/util-utf8":"^2.0.0","fast-xml-parser":"4.2.5","tslib":"^2.5.0"},"devDependencies":{"@smithy/service-client-documentation-generator":"^2.0.0","@tsconfig/node14":"1.0.3","@types/node":"^14.14.31","concurrently":"7.0.0","downlevel-dts":"0.10.1","rimraf":"3.0.2","typedoc":"0.23.23","typescript":"~4.9.5"},"engines":{"node":">=14.0.0"},"typesVersions":{"<4.0":{"dist-types/*":["dist-types/ts3.4/*"]}},"files":["dist-*/**"],"author":{"name":"AWS SDK for JavaScript Team","url":"https://aws.amazon.com/javascript/"},"license":"Apache-2.0","browser":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.browser"},"react-native":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.native"},"homepage":"https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-sts","repository":{"type":"git","url":"https://github.com/aws/aws-sdk-js-v3.git","directory":"clients/client-sts"}}');
 
 /***/ }),
 
