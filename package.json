@@ -17,7 +17,7 @@
   "dependencies": {
     "@actions/core": "^1.10.1",
     "@actions/github": "^5.1.1",
-    "@aws-sdk/client-ecr": "^3.421.0",
+    "@aws-sdk/client-ecr": "^3.423.0",
     "date-fns": "^2.30.0",
     "docker-cli-js": "^2.10.0"
   },
