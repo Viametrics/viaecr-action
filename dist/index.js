@@ -62607,7 +62607,7 @@ function isWithinInterval(date, interval) {
   const [startTime, endTime] = [
     +(0, _index.toDate)(interval.start),
     +(0, _index.toDate)(interval.end),
-  ].sort();
+  ].sort((a, b) => a - b);
 
   return time >= startTime && time <= endTime;
 }
@@ -70533,7 +70533,7 @@ function toDate(argument) {
   } else if (
     typeof argument === "number" ||
     argStr === "[object Number]" ||
-    typeof argStr === "string" ||
+    typeof argument === "string" ||
     argStr === "[object String]"
   ) {
     // TODO: Can we get rid of as?
