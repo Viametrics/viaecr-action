@@ -51693,11 +51693,11 @@ function areIntervalsOverlapping(intervalLeft, intervalRight, options) {
   const [leftStartTime, leftEndTime] = [
     +(0, _index.toDate)(intervalLeft.start),
     +(0, _index.toDate)(intervalLeft.end),
-  ].sort();
+  ].sort((a, b) => a - b);
   const [rightStartTime, rightEndTime] = [
     +(0, _index.toDate)(intervalRight.start),
     +(0, _index.toDate)(intervalRight.end),
-  ].sort();
+  ].sort((a, b) => a - b);
 
   if (options?.inclusive)
     return leftStartTime <= rightEndTime && rightStartTime <= leftEndTime;
@@ -56245,7 +56245,7 @@ var _index5 = __nccwpck_require__(42466);
  *
  * @example
  * // Represent the date of 6 days ago in words relative to the given base date. In this example, today is Wednesday
- * const result = formatRelative(addDays(new Date(), -6), new Date())
+ * const result = formatRelative(subDays(new Date(), 6), new Date())
  * //=> "last Thursday at 12:45 AM"
  */
 function formatRelative(date, baseDate, options) {
@@ -57184,7 +57184,7 @@ var _index4 = __nccwpck_require__(53622);
  * and `options.firstWeekContainsDate` (which is the day of January, which is always in
  * the first week of the week-numbering year)
  *
- * Week numbering: https://en.wikipedia.org/wiki/Week#Week_numbering
+ * Week numbering: https://en.wikipedia.org/wiki/Week#The_ISO_week_date_system
  *
  * @typeParam DateType - The `Date` type, the function operates on. Gets inferred from passed arguments. Allows to use extensions like [`UTCDate`](https://github.com/date-fns/utc).
  *
@@ -57312,7 +57312,7 @@ var _index4 = __nccwpck_require__(42466);
  * and `options.firstWeekContainsDate` (which is the day of January, which is always in
  * the first week of the week-numbering year)
  *
- * Week numbering: https://en.wikipedia.org/wiki/Week#Week_numbering
+ * Week numbering: https://en.wikipedia.org/wiki/Week#The_ISO_week_date_system
  *
  * @typeParam DateType - The `Date` type, the function operates on. Gets inferred from passed arguments. Allows to use extensions like [`UTCDate`](https://github.com/date-fns/utc).
  *
@@ -69227,7 +69227,7 @@ var _index2 = __nccwpck_require__(53622);
  * and `options.firstWeekContainsDate` (which is the day of January, which is always in
  * the first week of the week-numbering year)
  *
- * Week numbering: https://en.wikipedia.org/wiki/Week#Week_numbering
+ * Week numbering: https://en.wikipedia.org/wiki/Week#The_ISO_week_date_system
  *
  * @typeParam DateType - The `Date` type, the function operates on. Gets inferred from passed arguments. Allows to use extensions like [`UTCDate`](https://github.com/date-fns/utc).
  *
@@ -69292,7 +69292,7 @@ var _index5 = __nccwpck_require__(42466);
  * and `options.firstWeekContainsDate` (which is the day of January, which is always in
  * the first week of the week-numbering year)
  *
- * Week numbering: https://en.wikipedia.org/wiki/Week#Week_numbering
+ * Week numbering: https://en.wikipedia.org/wiki/Week#The_ISO_week_date_system
  *
  * @typeParam DateType - The `Date` type, the function operates on. Gets inferred from passed arguments. Allows to use extensions like [`UTCDate`](https://github.com/date-fns/utc).
  *
@@ -69888,7 +69888,7 @@ var _index4 = __nccwpck_require__(42466);
  * and `options.firstWeekContainsDate` (which is the day of January, which is always in
  * the first week of the week-numbering year)
  *
- * Week numbering: https://en.wikipedia.org/wiki/Week#Week_numbering
+ * Week numbering: https://en.wikipedia.org/wiki/Week#The_ISO_week_date_system
  *
  * @typeParam DateType - The `Date` type, the function operates on. Gets inferred from passed arguments. Allows to use extensions like [`UTCDate`](https://github.com/date-fns/utc).
  *
