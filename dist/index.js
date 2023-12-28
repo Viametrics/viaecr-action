@@ -2869,48 +2869,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class BatchCheckLayerAvailabilityCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, BatchCheckLayerAvailabilityCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "BatchCheckLayerAvailabilityCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "BatchCheckLayerAvailability",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_BatchCheckLayerAvailabilityCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_BatchCheckLayerAvailabilityCommand)(output, context);
-    }
+class BatchCheckLayerAvailabilityCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "BatchCheckLayerAvailability", {})
+    .n("ECRClient", "BatchCheckLayerAvailabilityCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_BatchCheckLayerAvailabilityCommand)
+    .de(Aws_json1_1_1.de_BatchCheckLayerAvailabilityCommand)
+    .build() {
 }
 exports.BatchCheckLayerAvailabilityCommand = BatchCheckLayerAvailabilityCommand;
 
@@ -2928,48 +2905,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class BatchDeleteImageCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, BatchDeleteImageCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "BatchDeleteImageCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "BatchDeleteImage",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_BatchDeleteImageCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_BatchDeleteImageCommand)(output, context);
-    }
+class BatchDeleteImageCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "BatchDeleteImage", {})
+    .n("ECRClient", "BatchDeleteImageCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_BatchDeleteImageCommand)
+    .de(Aws_json1_1_1.de_BatchDeleteImageCommand)
+    .build() {
 }
 exports.BatchDeleteImageCommand = BatchDeleteImageCommand;
 
@@ -2987,48 +2941,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class BatchGetImageCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, BatchGetImageCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "BatchGetImageCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "BatchGetImage",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_BatchGetImageCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_BatchGetImageCommand)(output, context);
-    }
+class BatchGetImageCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "BatchGetImage", {})
+    .n("ECRClient", "BatchGetImageCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_BatchGetImageCommand)
+    .de(Aws_json1_1_1.de_BatchGetImageCommand)
+    .build() {
 }
 exports.BatchGetImageCommand = BatchGetImageCommand;
 
@@ -3046,48 +2977,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class BatchGetRepositoryScanningConfigurationCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, BatchGetRepositoryScanningConfigurationCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "BatchGetRepositoryScanningConfigurationCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "BatchGetRepositoryScanningConfiguration",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_BatchGetRepositoryScanningConfigurationCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_BatchGetRepositoryScanningConfigurationCommand)(output, context);
-    }
+class BatchGetRepositoryScanningConfigurationCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "BatchGetRepositoryScanningConfiguration", {})
+    .n("ECRClient", "BatchGetRepositoryScanningConfigurationCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_BatchGetRepositoryScanningConfigurationCommand)
+    .de(Aws_json1_1_1.de_BatchGetRepositoryScanningConfigurationCommand)
+    .build() {
 }
 exports.BatchGetRepositoryScanningConfigurationCommand = BatchGetRepositoryScanningConfigurationCommand;
 
@@ -3105,48 +3013,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class CompleteLayerUploadCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, CompleteLayerUploadCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "CompleteLayerUploadCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "CompleteLayerUpload",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_CompleteLayerUploadCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_CompleteLayerUploadCommand)(output, context);
-    }
+class CompleteLayerUploadCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "CompleteLayerUpload", {})
+    .n("ECRClient", "CompleteLayerUploadCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_CompleteLayerUploadCommand)
+    .de(Aws_json1_1_1.de_CompleteLayerUploadCommand)
+    .build() {
 }
 exports.CompleteLayerUploadCommand = CompleteLayerUploadCommand;
 
@@ -3164,48 +3049,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class CreatePullThroughCacheRuleCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, CreatePullThroughCacheRuleCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "CreatePullThroughCacheRuleCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "CreatePullThroughCacheRule",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_CreatePullThroughCacheRuleCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_CreatePullThroughCacheRuleCommand)(output, context);
-    }
+class CreatePullThroughCacheRuleCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "CreatePullThroughCacheRule", {})
+    .n("ECRClient", "CreatePullThroughCacheRuleCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_CreatePullThroughCacheRuleCommand)
+    .de(Aws_json1_1_1.de_CreatePullThroughCacheRuleCommand)
+    .build() {
 }
 exports.CreatePullThroughCacheRuleCommand = CreatePullThroughCacheRuleCommand;
 
@@ -3223,48 +3085,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class CreateRepositoryCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, CreateRepositoryCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "CreateRepositoryCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "CreateRepository",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_CreateRepositoryCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_CreateRepositoryCommand)(output, context);
-    }
+class CreateRepositoryCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "CreateRepository", {})
+    .n("ECRClient", "CreateRepositoryCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_CreateRepositoryCommand)
+    .de(Aws_json1_1_1.de_CreateRepositoryCommand)
+    .build() {
 }
 exports.CreateRepositoryCommand = CreateRepositoryCommand;
 
@@ -3282,48 +3121,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class DeleteLifecyclePolicyCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, DeleteLifecyclePolicyCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "DeleteLifecyclePolicyCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "DeleteLifecyclePolicy",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_DeleteLifecyclePolicyCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_DeleteLifecyclePolicyCommand)(output, context);
-    }
+class DeleteLifecyclePolicyCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "DeleteLifecyclePolicy", {})
+    .n("ECRClient", "DeleteLifecyclePolicyCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_DeleteLifecyclePolicyCommand)
+    .de(Aws_json1_1_1.de_DeleteLifecyclePolicyCommand)
+    .build() {
 }
 exports.DeleteLifecyclePolicyCommand = DeleteLifecyclePolicyCommand;
 
@@ -3341,48 +3157,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class DeletePullThroughCacheRuleCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, DeletePullThroughCacheRuleCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "DeletePullThroughCacheRuleCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "DeletePullThroughCacheRule",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_DeletePullThroughCacheRuleCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_DeletePullThroughCacheRuleCommand)(output, context);
-    }
+class DeletePullThroughCacheRuleCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "DeletePullThroughCacheRule", {})
+    .n("ECRClient", "DeletePullThroughCacheRuleCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_DeletePullThroughCacheRuleCommand)
+    .de(Aws_json1_1_1.de_DeletePullThroughCacheRuleCommand)
+    .build() {
 }
 exports.DeletePullThroughCacheRuleCommand = DeletePullThroughCacheRuleCommand;
 
@@ -3400,48 +3193,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class DeleteRegistryPolicyCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, DeleteRegistryPolicyCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "DeleteRegistryPolicyCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "DeleteRegistryPolicy",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_DeleteRegistryPolicyCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_DeleteRegistryPolicyCommand)(output, context);
-    }
+class DeleteRegistryPolicyCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "DeleteRegistryPolicy", {})
+    .n("ECRClient", "DeleteRegistryPolicyCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_DeleteRegistryPolicyCommand)
+    .de(Aws_json1_1_1.de_DeleteRegistryPolicyCommand)
+    .build() {
 }
 exports.DeleteRegistryPolicyCommand = DeleteRegistryPolicyCommand;
 
@@ -3459,48 +3229,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class DeleteRepositoryCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, DeleteRepositoryCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "DeleteRepositoryCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "DeleteRepository",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_DeleteRepositoryCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_DeleteRepositoryCommand)(output, context);
-    }
+class DeleteRepositoryCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "DeleteRepository", {})
+    .n("ECRClient", "DeleteRepositoryCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_DeleteRepositoryCommand)
+    .de(Aws_json1_1_1.de_DeleteRepositoryCommand)
+    .build() {
 }
 exports.DeleteRepositoryCommand = DeleteRepositoryCommand;
 
@@ -3518,48 +3265,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class DeleteRepositoryPolicyCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, DeleteRepositoryPolicyCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "DeleteRepositoryPolicyCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "DeleteRepositoryPolicy",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_DeleteRepositoryPolicyCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_DeleteRepositoryPolicyCommand)(output, context);
-    }
+class DeleteRepositoryPolicyCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "DeleteRepositoryPolicy", {})
+    .n("ECRClient", "DeleteRepositoryPolicyCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_DeleteRepositoryPolicyCommand)
+    .de(Aws_json1_1_1.de_DeleteRepositoryPolicyCommand)
+    .build() {
 }
 exports.DeleteRepositoryPolicyCommand = DeleteRepositoryPolicyCommand;
 
@@ -3577,48 +3301,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class DescribeImageReplicationStatusCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, DescribeImageReplicationStatusCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "DescribeImageReplicationStatusCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "DescribeImageReplicationStatus",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_DescribeImageReplicationStatusCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_DescribeImageReplicationStatusCommand)(output, context);
-    }
+class DescribeImageReplicationStatusCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "DescribeImageReplicationStatus", {})
+    .n("ECRClient", "DescribeImageReplicationStatusCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_DescribeImageReplicationStatusCommand)
+    .de(Aws_json1_1_1.de_DescribeImageReplicationStatusCommand)
+    .build() {
 }
 exports.DescribeImageReplicationStatusCommand = DescribeImageReplicationStatusCommand;
 
@@ -3636,48 +3337,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class DescribeImageScanFindingsCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, DescribeImageScanFindingsCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "DescribeImageScanFindingsCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "DescribeImageScanFindings",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_DescribeImageScanFindingsCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_DescribeImageScanFindingsCommand)(output, context);
-    }
+class DescribeImageScanFindingsCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "DescribeImageScanFindings", {})
+    .n("ECRClient", "DescribeImageScanFindingsCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_DescribeImageScanFindingsCommand)
+    .de(Aws_json1_1_1.de_DescribeImageScanFindingsCommand)
+    .build() {
 }
 exports.DescribeImageScanFindingsCommand = DescribeImageScanFindingsCommand;
 
@@ -3695,48 +3373,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class DescribeImagesCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, DescribeImagesCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "DescribeImagesCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "DescribeImages",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_DescribeImagesCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_DescribeImagesCommand)(output, context);
-    }
+class DescribeImagesCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "DescribeImages", {})
+    .n("ECRClient", "DescribeImagesCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_DescribeImagesCommand)
+    .de(Aws_json1_1_1.de_DescribeImagesCommand)
+    .build() {
 }
 exports.DescribeImagesCommand = DescribeImagesCommand;
 
@@ -3754,48 +3409,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class DescribePullThroughCacheRulesCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, DescribePullThroughCacheRulesCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "DescribePullThroughCacheRulesCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "DescribePullThroughCacheRules",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_DescribePullThroughCacheRulesCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_DescribePullThroughCacheRulesCommand)(output, context);
-    }
+class DescribePullThroughCacheRulesCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "DescribePullThroughCacheRules", {})
+    .n("ECRClient", "DescribePullThroughCacheRulesCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_DescribePullThroughCacheRulesCommand)
+    .de(Aws_json1_1_1.de_DescribePullThroughCacheRulesCommand)
+    .build() {
 }
 exports.DescribePullThroughCacheRulesCommand = DescribePullThroughCacheRulesCommand;
 
@@ -3813,48 +3445,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class DescribeRegistryCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, DescribeRegistryCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "DescribeRegistryCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "DescribeRegistry",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_DescribeRegistryCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_DescribeRegistryCommand)(output, context);
-    }
+class DescribeRegistryCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "DescribeRegistry", {})
+    .n("ECRClient", "DescribeRegistryCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_DescribeRegistryCommand)
+    .de(Aws_json1_1_1.de_DescribeRegistryCommand)
+    .build() {
 }
 exports.DescribeRegistryCommand = DescribeRegistryCommand;
 
@@ -3872,48 +3481,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class DescribeRepositoriesCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, DescribeRepositoriesCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "DescribeRepositoriesCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "DescribeRepositories",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_DescribeRepositoriesCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_DescribeRepositoriesCommand)(output, context);
-    }
+class DescribeRepositoriesCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "DescribeRepositories", {})
+    .n("ECRClient", "DescribeRepositoriesCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_DescribeRepositoriesCommand)
+    .de(Aws_json1_1_1.de_DescribeRepositoriesCommand)
+    .build() {
 }
 exports.DescribeRepositoriesCommand = DescribeRepositoriesCommand;
 
@@ -3931,48 +3517,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class GetAuthorizationTokenCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, GetAuthorizationTokenCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "GetAuthorizationTokenCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "GetAuthorizationToken",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_GetAuthorizationTokenCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_GetAuthorizationTokenCommand)(output, context);
-    }
+class GetAuthorizationTokenCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "GetAuthorizationToken", {})
+    .n("ECRClient", "GetAuthorizationTokenCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_GetAuthorizationTokenCommand)
+    .de(Aws_json1_1_1.de_GetAuthorizationTokenCommand)
+    .build() {
 }
 exports.GetAuthorizationTokenCommand = GetAuthorizationTokenCommand;
 
@@ -3990,48 +3553,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class GetDownloadUrlForLayerCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, GetDownloadUrlForLayerCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "GetDownloadUrlForLayerCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "GetDownloadUrlForLayer",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_GetDownloadUrlForLayerCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_GetDownloadUrlForLayerCommand)(output, context);
-    }
+class GetDownloadUrlForLayerCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "GetDownloadUrlForLayer", {})
+    .n("ECRClient", "GetDownloadUrlForLayerCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_GetDownloadUrlForLayerCommand)
+    .de(Aws_json1_1_1.de_GetDownloadUrlForLayerCommand)
+    .build() {
 }
 exports.GetDownloadUrlForLayerCommand = GetDownloadUrlForLayerCommand;
 
@@ -4049,48 +3589,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class GetLifecyclePolicyCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, GetLifecyclePolicyCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "GetLifecyclePolicyCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "GetLifecyclePolicy",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_GetLifecyclePolicyCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_GetLifecyclePolicyCommand)(output, context);
-    }
+class GetLifecyclePolicyCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "GetLifecyclePolicy", {})
+    .n("ECRClient", "GetLifecyclePolicyCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_GetLifecyclePolicyCommand)
+    .de(Aws_json1_1_1.de_GetLifecyclePolicyCommand)
+    .build() {
 }
 exports.GetLifecyclePolicyCommand = GetLifecyclePolicyCommand;
 
@@ -4108,48 +3625,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class GetLifecyclePolicyPreviewCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, GetLifecyclePolicyPreviewCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "GetLifecyclePolicyPreviewCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "GetLifecyclePolicyPreview",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_GetLifecyclePolicyPreviewCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_GetLifecyclePolicyPreviewCommand)(output, context);
-    }
+class GetLifecyclePolicyPreviewCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "GetLifecyclePolicyPreview", {})
+    .n("ECRClient", "GetLifecyclePolicyPreviewCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_GetLifecyclePolicyPreviewCommand)
+    .de(Aws_json1_1_1.de_GetLifecyclePolicyPreviewCommand)
+    .build() {
 }
 exports.GetLifecyclePolicyPreviewCommand = GetLifecyclePolicyPreviewCommand;
 
@@ -4167,48 +3661,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class GetRegistryPolicyCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, GetRegistryPolicyCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "GetRegistryPolicyCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "GetRegistryPolicy",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_GetRegistryPolicyCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_GetRegistryPolicyCommand)(output, context);
-    }
+class GetRegistryPolicyCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "GetRegistryPolicy", {})
+    .n("ECRClient", "GetRegistryPolicyCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_GetRegistryPolicyCommand)
+    .de(Aws_json1_1_1.de_GetRegistryPolicyCommand)
+    .build() {
 }
 exports.GetRegistryPolicyCommand = GetRegistryPolicyCommand;
 
@@ -4226,48 +3697,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class GetRegistryScanningConfigurationCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, GetRegistryScanningConfigurationCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "GetRegistryScanningConfigurationCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "GetRegistryScanningConfiguration",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_GetRegistryScanningConfigurationCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_GetRegistryScanningConfigurationCommand)(output, context);
-    }
+class GetRegistryScanningConfigurationCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "GetRegistryScanningConfiguration", {})
+    .n("ECRClient", "GetRegistryScanningConfigurationCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_GetRegistryScanningConfigurationCommand)
+    .de(Aws_json1_1_1.de_GetRegistryScanningConfigurationCommand)
+    .build() {
 }
 exports.GetRegistryScanningConfigurationCommand = GetRegistryScanningConfigurationCommand;
 
@@ -4285,48 +3733,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class GetRepositoryPolicyCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, GetRepositoryPolicyCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "GetRepositoryPolicyCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "GetRepositoryPolicy",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_GetRepositoryPolicyCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_GetRepositoryPolicyCommand)(output, context);
-    }
+class GetRepositoryPolicyCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "GetRepositoryPolicy", {})
+    .n("ECRClient", "GetRepositoryPolicyCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_GetRepositoryPolicyCommand)
+    .de(Aws_json1_1_1.de_GetRepositoryPolicyCommand)
+    .build() {
 }
 exports.GetRepositoryPolicyCommand = GetRepositoryPolicyCommand;
 
@@ -4344,48 +3769,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class InitiateLayerUploadCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, InitiateLayerUploadCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "InitiateLayerUploadCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "InitiateLayerUpload",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_InitiateLayerUploadCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_InitiateLayerUploadCommand)(output, context);
-    }
+class InitiateLayerUploadCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "InitiateLayerUpload", {})
+    .n("ECRClient", "InitiateLayerUploadCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_InitiateLayerUploadCommand)
+    .de(Aws_json1_1_1.de_InitiateLayerUploadCommand)
+    .build() {
 }
 exports.InitiateLayerUploadCommand = InitiateLayerUploadCommand;
 
@@ -4403,48 +3805,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class ListImagesCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, ListImagesCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "ListImagesCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "ListImages",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_ListImagesCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_ListImagesCommand)(output, context);
-    }
+class ListImagesCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "ListImages", {})
+    .n("ECRClient", "ListImagesCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_ListImagesCommand)
+    .de(Aws_json1_1_1.de_ListImagesCommand)
+    .build() {
 }
 exports.ListImagesCommand = ListImagesCommand;
 
@@ -4462,48 +3841,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class ListTagsForResourceCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, ListTagsForResourceCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "ListTagsForResourceCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "ListTagsForResource",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_ListTagsForResourceCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_ListTagsForResourceCommand)(output, context);
-    }
+class ListTagsForResourceCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "ListTagsForResource", {})
+    .n("ECRClient", "ListTagsForResourceCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_ListTagsForResourceCommand)
+    .de(Aws_json1_1_1.de_ListTagsForResourceCommand)
+    .build() {
 }
 exports.ListTagsForResourceCommand = ListTagsForResourceCommand;
 
@@ -4521,48 +3877,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class PutImageCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, PutImageCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "PutImageCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "PutImage",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_PutImageCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_PutImageCommand)(output, context);
-    }
+class PutImageCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "PutImage", {})
+    .n("ECRClient", "PutImageCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_PutImageCommand)
+    .de(Aws_json1_1_1.de_PutImageCommand)
+    .build() {
 }
 exports.PutImageCommand = PutImageCommand;
 
@@ -4580,48 +3913,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class PutImageScanningConfigurationCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, PutImageScanningConfigurationCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "PutImageScanningConfigurationCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "PutImageScanningConfiguration",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_PutImageScanningConfigurationCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_PutImageScanningConfigurationCommand)(output, context);
-    }
+class PutImageScanningConfigurationCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "PutImageScanningConfiguration", {})
+    .n("ECRClient", "PutImageScanningConfigurationCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_PutImageScanningConfigurationCommand)
+    .de(Aws_json1_1_1.de_PutImageScanningConfigurationCommand)
+    .build() {
 }
 exports.PutImageScanningConfigurationCommand = PutImageScanningConfigurationCommand;
 
@@ -4639,48 +3949,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class PutImageTagMutabilityCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, PutImageTagMutabilityCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "PutImageTagMutabilityCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "PutImageTagMutability",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_PutImageTagMutabilityCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_PutImageTagMutabilityCommand)(output, context);
-    }
+class PutImageTagMutabilityCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "PutImageTagMutability", {})
+    .n("ECRClient", "PutImageTagMutabilityCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_PutImageTagMutabilityCommand)
+    .de(Aws_json1_1_1.de_PutImageTagMutabilityCommand)
+    .build() {
 }
 exports.PutImageTagMutabilityCommand = PutImageTagMutabilityCommand;
 
@@ -4698,48 +3985,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class PutLifecyclePolicyCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, PutLifecyclePolicyCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "PutLifecyclePolicyCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "PutLifecyclePolicy",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_PutLifecyclePolicyCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_PutLifecyclePolicyCommand)(output, context);
-    }
+class PutLifecyclePolicyCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "PutLifecyclePolicy", {})
+    .n("ECRClient", "PutLifecyclePolicyCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_PutLifecyclePolicyCommand)
+    .de(Aws_json1_1_1.de_PutLifecyclePolicyCommand)
+    .build() {
 }
 exports.PutLifecyclePolicyCommand = PutLifecyclePolicyCommand;
 
@@ -4757,48 +4021,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class PutRegistryPolicyCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, PutRegistryPolicyCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "PutRegistryPolicyCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "PutRegistryPolicy",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_PutRegistryPolicyCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_PutRegistryPolicyCommand)(output, context);
-    }
+class PutRegistryPolicyCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "PutRegistryPolicy", {})
+    .n("ECRClient", "PutRegistryPolicyCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_PutRegistryPolicyCommand)
+    .de(Aws_json1_1_1.de_PutRegistryPolicyCommand)
+    .build() {
 }
 exports.PutRegistryPolicyCommand = PutRegistryPolicyCommand;
 
@@ -4816,48 +4057,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class PutRegistryScanningConfigurationCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, PutRegistryScanningConfigurationCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "PutRegistryScanningConfigurationCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "PutRegistryScanningConfiguration",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_PutRegistryScanningConfigurationCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_PutRegistryScanningConfigurationCommand)(output, context);
-    }
+class PutRegistryScanningConfigurationCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "PutRegistryScanningConfiguration", {})
+    .n("ECRClient", "PutRegistryScanningConfigurationCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_PutRegistryScanningConfigurationCommand)
+    .de(Aws_json1_1_1.de_PutRegistryScanningConfigurationCommand)
+    .build() {
 }
 exports.PutRegistryScanningConfigurationCommand = PutRegistryScanningConfigurationCommand;
 
@@ -4875,48 +4093,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class PutReplicationConfigurationCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, PutReplicationConfigurationCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "PutReplicationConfigurationCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "PutReplicationConfiguration",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_PutReplicationConfigurationCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_PutReplicationConfigurationCommand)(output, context);
-    }
+class PutReplicationConfigurationCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "PutReplicationConfiguration", {})
+    .n("ECRClient", "PutReplicationConfigurationCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_PutReplicationConfigurationCommand)
+    .de(Aws_json1_1_1.de_PutReplicationConfigurationCommand)
+    .build() {
 }
 exports.PutReplicationConfigurationCommand = PutReplicationConfigurationCommand;
 
@@ -4934,48 +4129,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class SetRepositoryPolicyCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, SetRepositoryPolicyCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "SetRepositoryPolicyCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "SetRepositoryPolicy",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_SetRepositoryPolicyCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_SetRepositoryPolicyCommand)(output, context);
-    }
+class SetRepositoryPolicyCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "SetRepositoryPolicy", {})
+    .n("ECRClient", "SetRepositoryPolicyCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_SetRepositoryPolicyCommand)
+    .de(Aws_json1_1_1.de_SetRepositoryPolicyCommand)
+    .build() {
 }
 exports.SetRepositoryPolicyCommand = SetRepositoryPolicyCommand;
 
@@ -4993,48 +4165,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class StartImageScanCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, StartImageScanCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "StartImageScanCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "StartImageScan",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_StartImageScanCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_StartImageScanCommand)(output, context);
-    }
+class StartImageScanCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "StartImageScan", {})
+    .n("ECRClient", "StartImageScanCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_StartImageScanCommand)
+    .de(Aws_json1_1_1.de_StartImageScanCommand)
+    .build() {
 }
 exports.StartImageScanCommand = StartImageScanCommand;
 
@@ -5052,48 +4201,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class StartLifecyclePolicyPreviewCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, StartLifecyclePolicyPreviewCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "StartLifecyclePolicyPreviewCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "StartLifecyclePolicyPreview",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_StartLifecyclePolicyPreviewCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_StartLifecyclePolicyPreviewCommand)(output, context);
-    }
+class StartLifecyclePolicyPreviewCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "StartLifecyclePolicyPreview", {})
+    .n("ECRClient", "StartLifecyclePolicyPreviewCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_StartLifecyclePolicyPreviewCommand)
+    .de(Aws_json1_1_1.de_StartLifecyclePolicyPreviewCommand)
+    .build() {
 }
 exports.StartLifecyclePolicyPreviewCommand = StartLifecyclePolicyPreviewCommand;
 
@@ -5111,48 +4237,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class TagResourceCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, TagResourceCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "TagResourceCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "TagResource",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_TagResourceCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_TagResourceCommand)(output, context);
-    }
+class TagResourceCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "TagResource", {})
+    .n("ECRClient", "TagResourceCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_TagResourceCommand)
+    .de(Aws_json1_1_1.de_TagResourceCommand)
+    .build() {
 }
 exports.TagResourceCommand = TagResourceCommand;
 
@@ -5170,48 +4273,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class UntagResourceCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, UntagResourceCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "UntagResourceCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "UntagResource",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_UntagResourceCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_UntagResourceCommand)(output, context);
-    }
+class UntagResourceCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "UntagResource", {})
+    .n("ECRClient", "UntagResourceCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_UntagResourceCommand)
+    .de(Aws_json1_1_1.de_UntagResourceCommand)
+    .build() {
 }
 exports.UntagResourceCommand = UntagResourceCommand;
 
@@ -5229,48 +4309,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class UpdatePullThroughCacheRuleCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, UpdatePullThroughCacheRuleCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "UpdatePullThroughCacheRuleCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "UpdatePullThroughCacheRule",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_UpdatePullThroughCacheRuleCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_UpdatePullThroughCacheRuleCommand)(output, context);
-    }
+class UpdatePullThroughCacheRuleCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "UpdatePullThroughCacheRule", {})
+    .n("ECRClient", "UpdatePullThroughCacheRuleCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_UpdatePullThroughCacheRuleCommand)
+    .de(Aws_json1_1_1.de_UpdatePullThroughCacheRuleCommand)
+    .build() {
 }
 exports.UpdatePullThroughCacheRuleCommand = UpdatePullThroughCacheRuleCommand;
 
@@ -5288,48 +4345,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class UploadLayerPartCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, UploadLayerPartCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "UploadLayerPartCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "UploadLayerPart",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_UploadLayerPartCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_UploadLayerPartCommand)(output, context);
-    }
+class UploadLayerPartCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "UploadLayerPart", {})
+    .n("ECRClient", "UploadLayerPartCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_UploadLayerPartCommand)
+    .de(Aws_json1_1_1.de_UploadLayerPartCommand)
+    .build() {
 }
 exports.UploadLayerPartCommand = UploadLayerPartCommand;
 
@@ -5347,48 +4381,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(49729);
 const Aws_json1_1_1 = __nccwpck_require__(56704);
-class ValidatePullThroughCacheRuleCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, ValidatePullThroughCacheRuleCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "ECRClient";
-        const commandName = "ValidatePullThroughCacheRuleCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AmazonEC2ContainerRegistry_V20150921",
-                operation: "ValidatePullThroughCacheRule",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_json1_1_1.se_ValidatePullThroughCacheRuleCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_json1_1_1.de_ValidatePullThroughCacheRuleCommand)(output, context);
-    }
+class ValidatePullThroughCacheRuleCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AmazonEC2ContainerRegistry_V20150921", "ValidatePullThroughCacheRule", {})
+    .n("ECRClient", "ValidatePullThroughCacheRuleCommand")
+    .f(void 0, void 0)
+    .ser(Aws_json1_1_1.se_ValidatePullThroughCacheRuleCommand)
+    .de(Aws_json1_1_1.de_ValidatePullThroughCacheRuleCommand)
+    .build() {
 }
 exports.ValidatePullThroughCacheRuleCommand = ValidatePullThroughCacheRuleCommand;
 
@@ -5455,7 +4466,7 @@ tslib_1.__exportStar(__nccwpck_require__(27168), exports);
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.resolveClientEndpointParameters = void 0;
+exports.commonParams = exports.resolveClientEndpointParameters = void 0;
 const resolveClientEndpointParameters = (options) => {
     return {
         ...options,
@@ -5465,6 +4476,12 @@ const resolveClientEndpointParameters = (options) => {
     };
 };
 exports.resolveClientEndpointParameters = resolveClientEndpointParameters;
+exports.commonParams = {
+    UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
+    Endpoint: { type: "builtInParams", name: "endpoint" },
+    Region: { type: "builtInParams", name: "region" },
+    UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
+};
 
 
 /***/ }),
@@ -9973,49 +8990,26 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(34214);
 const models_0_1 = __nccwpck_require__(66390);
 const Aws_restJson1_1 = __nccwpck_require__(98507);
-class GetRoleCredentialsCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, GetRoleCredentialsCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "SSOClient";
-        const commandName = "GetRoleCredentialsCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: models_0_1.GetRoleCredentialsRequestFilterSensitiveLog,
-            outputFilterSensitiveLog: models_0_1.GetRoleCredentialsResponseFilterSensitiveLog,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "SWBPortalService",
-                operation: "GetRoleCredentials",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_restJson1_1.se_GetRoleCredentialsCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_restJson1_1.de_GetRoleCredentialsCommand)(output, context);
-    }
+class GetRoleCredentialsCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("SWBPortalService", "GetRoleCredentials", {})
+    .n("SSOClient", "GetRoleCredentialsCommand")
+    .f(models_0_1.GetRoleCredentialsRequestFilterSensitiveLog, models_0_1.GetRoleCredentialsResponseFilterSensitiveLog)
+    .ser(Aws_restJson1_1.se_GetRoleCredentialsCommand)
+    .de(Aws_restJson1_1.de_GetRoleCredentialsCommand)
+    .build() {
 }
 exports.GetRoleCredentialsCommand = GetRoleCredentialsCommand;
 
@@ -10033,49 +9027,26 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(34214);
 const models_0_1 = __nccwpck_require__(66390);
 const Aws_restJson1_1 = __nccwpck_require__(98507);
-class ListAccountRolesCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, ListAccountRolesCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "SSOClient";
-        const commandName = "ListAccountRolesCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: models_0_1.ListAccountRolesRequestFilterSensitiveLog,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "SWBPortalService",
-                operation: "ListAccountRoles",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_restJson1_1.se_ListAccountRolesCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_restJson1_1.de_ListAccountRolesCommand)(output, context);
-    }
+class ListAccountRolesCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("SWBPortalService", "ListAccountRoles", {})
+    .n("SSOClient", "ListAccountRolesCommand")
+    .f(models_0_1.ListAccountRolesRequestFilterSensitiveLog, void 0)
+    .ser(Aws_restJson1_1.se_ListAccountRolesCommand)
+    .de(Aws_restJson1_1.de_ListAccountRolesCommand)
+    .build() {
 }
 exports.ListAccountRolesCommand = ListAccountRolesCommand;
 
@@ -10093,49 +9064,26 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(34214);
 const models_0_1 = __nccwpck_require__(66390);
 const Aws_restJson1_1 = __nccwpck_require__(98507);
-class ListAccountsCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, ListAccountsCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "SSOClient";
-        const commandName = "ListAccountsCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: models_0_1.ListAccountsRequestFilterSensitiveLog,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "SWBPortalService",
-                operation: "ListAccounts",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_restJson1_1.se_ListAccountsCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_restJson1_1.de_ListAccountsCommand)(output, context);
-    }
+class ListAccountsCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("SWBPortalService", "ListAccounts", {})
+    .n("SSOClient", "ListAccountsCommand")
+    .f(models_0_1.ListAccountsRequestFilterSensitiveLog, void 0)
+    .ser(Aws_restJson1_1.se_ListAccountsCommand)
+    .de(Aws_restJson1_1.de_ListAccountsCommand)
+    .build() {
 }
 exports.ListAccountsCommand = ListAccountsCommand;
 
@@ -10153,49 +9101,26 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(34214);
 const models_0_1 = __nccwpck_require__(66390);
 const Aws_restJson1_1 = __nccwpck_require__(98507);
-class LogoutCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, LogoutCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "SSOClient";
-        const commandName = "LogoutCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: models_0_1.LogoutRequestFilterSensitiveLog,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "SWBPortalService",
-                operation: "Logout",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_restJson1_1.se_LogoutCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_restJson1_1.de_LogoutCommand)(output, context);
-    }
+class LogoutCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("SWBPortalService", "Logout", {})
+    .n("SSOClient", "LogoutCommand")
+    .f(models_0_1.LogoutRequestFilterSensitiveLog, void 0)
+    .ser(Aws_restJson1_1.se_LogoutCommand)
+    .de(Aws_restJson1_1.de_LogoutCommand)
+    .build() {
 }
 exports.LogoutCommand = LogoutCommand;
 
@@ -10223,7 +9148,7 @@ tslib_1.__exportStar(__nccwpck_require__(12586), exports);
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.resolveClientEndpointParameters = void 0;
+exports.commonParams = exports.resolveClientEndpointParameters = void 0;
 const resolveClientEndpointParameters = (options) => {
     return {
         ...options,
@@ -10233,6 +9158,12 @@ const resolveClientEndpointParameters = (options) => {
     };
 };
 exports.resolveClientEndpointParameters = resolveClientEndpointParameters;
+exports.commonParams = {
+    UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
+    Endpoint: { type: "builtInParams", name: "endpoint" },
+    Region: { type: "builtInParams", name: "region" },
+    UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
+};
 
 
 /***/ }),
@@ -11609,50 +10540,26 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(20510);
 const models_0_1 = __nccwpck_require__(21780);
 const Aws_query_1 = __nccwpck_require__(10740);
-class AssumeRoleCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseGlobalEndpoint: { type: "builtInParams", name: "useGlobalEndpoint" },
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, AssumeRoleCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "STSClient";
-        const commandName = "AssumeRoleCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: models_0_1.AssumeRoleResponseFilterSensitiveLog,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AWSSecurityTokenServiceV20110615",
-                operation: "AssumeRole",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_query_1.se_AssumeRoleCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_query_1.de_AssumeRoleCommand)(output, context);
-    }
+class AssumeRoleCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AWSSecurityTokenServiceV20110615", "AssumeRole", {})
+    .n("STSClient", "AssumeRoleCommand")
+    .f(void 0, models_0_1.AssumeRoleResponseFilterSensitiveLog)
+    .ser(Aws_query_1.se_AssumeRoleCommand)
+    .de(Aws_query_1.de_AssumeRoleCommand)
+    .build() {
 }
 exports.AssumeRoleCommand = AssumeRoleCommand;
 
@@ -11670,50 +10577,26 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(20510);
 const models_0_1 = __nccwpck_require__(21780);
 const Aws_query_1 = __nccwpck_require__(10740);
-class AssumeRoleWithSAMLCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseGlobalEndpoint: { type: "builtInParams", name: "useGlobalEndpoint" },
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, AssumeRoleWithSAMLCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "STSClient";
-        const commandName = "AssumeRoleWithSAMLCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: models_0_1.AssumeRoleWithSAMLRequestFilterSensitiveLog,
-            outputFilterSensitiveLog: models_0_1.AssumeRoleWithSAMLResponseFilterSensitiveLog,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AWSSecurityTokenServiceV20110615",
-                operation: "AssumeRoleWithSAML",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_query_1.se_AssumeRoleWithSAMLCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_query_1.de_AssumeRoleWithSAMLCommand)(output, context);
-    }
+class AssumeRoleWithSAMLCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AWSSecurityTokenServiceV20110615", "AssumeRoleWithSAML", {})
+    .n("STSClient", "AssumeRoleWithSAMLCommand")
+    .f(models_0_1.AssumeRoleWithSAMLRequestFilterSensitiveLog, models_0_1.AssumeRoleWithSAMLResponseFilterSensitiveLog)
+    .ser(Aws_query_1.se_AssumeRoleWithSAMLCommand)
+    .de(Aws_query_1.de_AssumeRoleWithSAMLCommand)
+    .build() {
 }
 exports.AssumeRoleWithSAMLCommand = AssumeRoleWithSAMLCommand;
 
@@ -11731,50 +10614,26 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(20510);
 const models_0_1 = __nccwpck_require__(21780);
 const Aws_query_1 = __nccwpck_require__(10740);
-class AssumeRoleWithWebIdentityCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseGlobalEndpoint: { type: "builtInParams", name: "useGlobalEndpoint" },
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, AssumeRoleWithWebIdentityCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "STSClient";
-        const commandName = "AssumeRoleWithWebIdentityCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: models_0_1.AssumeRoleWithWebIdentityRequestFilterSensitiveLog,
-            outputFilterSensitiveLog: models_0_1.AssumeRoleWithWebIdentityResponseFilterSensitiveLog,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AWSSecurityTokenServiceV20110615",
-                operation: "AssumeRoleWithWebIdentity",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_query_1.se_AssumeRoleWithWebIdentityCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_query_1.de_AssumeRoleWithWebIdentityCommand)(output, context);
-    }
+class AssumeRoleWithWebIdentityCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AWSSecurityTokenServiceV20110615", "AssumeRoleWithWebIdentity", {})
+    .n("STSClient", "AssumeRoleWithWebIdentityCommand")
+    .f(models_0_1.AssumeRoleWithWebIdentityRequestFilterSensitiveLog, models_0_1.AssumeRoleWithWebIdentityResponseFilterSensitiveLog)
+    .ser(Aws_query_1.se_AssumeRoleWithWebIdentityCommand)
+    .de(Aws_query_1.de_AssumeRoleWithWebIdentityCommand)
+    .build() {
 }
 exports.AssumeRoleWithWebIdentityCommand = AssumeRoleWithWebIdentityCommand;
 
@@ -11792,49 +10651,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(20510);
 const Aws_query_1 = __nccwpck_require__(10740);
-class DecodeAuthorizationMessageCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseGlobalEndpoint: { type: "builtInParams", name: "useGlobalEndpoint" },
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, DecodeAuthorizationMessageCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "STSClient";
-        const commandName = "DecodeAuthorizationMessageCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AWSSecurityTokenServiceV20110615",
-                operation: "DecodeAuthorizationMessage",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_query_1.se_DecodeAuthorizationMessageCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_query_1.de_DecodeAuthorizationMessageCommand)(output, context);
-    }
+class DecodeAuthorizationMessageCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AWSSecurityTokenServiceV20110615", "DecodeAuthorizationMessage", {})
+    .n("STSClient", "DecodeAuthorizationMessageCommand")
+    .f(void 0, void 0)
+    .ser(Aws_query_1.se_DecodeAuthorizationMessageCommand)
+    .de(Aws_query_1.de_DecodeAuthorizationMessageCommand)
+    .build() {
 }
 exports.DecodeAuthorizationMessageCommand = DecodeAuthorizationMessageCommand;
 
@@ -11852,49 +10687,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(20510);
 const Aws_query_1 = __nccwpck_require__(10740);
-class GetAccessKeyInfoCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseGlobalEndpoint: { type: "builtInParams", name: "useGlobalEndpoint" },
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, GetAccessKeyInfoCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "STSClient";
-        const commandName = "GetAccessKeyInfoCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AWSSecurityTokenServiceV20110615",
-                operation: "GetAccessKeyInfo",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_query_1.se_GetAccessKeyInfoCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_query_1.de_GetAccessKeyInfoCommand)(output, context);
-    }
+class GetAccessKeyInfoCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AWSSecurityTokenServiceV20110615", "GetAccessKeyInfo", {})
+    .n("STSClient", "GetAccessKeyInfoCommand")
+    .f(void 0, void 0)
+    .ser(Aws_query_1.se_GetAccessKeyInfoCommand)
+    .de(Aws_query_1.de_GetAccessKeyInfoCommand)
+    .build() {
 }
 exports.GetAccessKeyInfoCommand = GetAccessKeyInfoCommand;
 
@@ -11912,49 +10723,25 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(20510);
 const Aws_query_1 = __nccwpck_require__(10740);
-class GetCallerIdentityCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseGlobalEndpoint: { type: "builtInParams", name: "useGlobalEndpoint" },
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, GetCallerIdentityCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "STSClient";
-        const commandName = "GetCallerIdentityCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: (_) => _,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AWSSecurityTokenServiceV20110615",
-                operation: "GetCallerIdentity",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_query_1.se_GetCallerIdentityCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_query_1.de_GetCallerIdentityCommand)(output, context);
-    }
+class GetCallerIdentityCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AWSSecurityTokenServiceV20110615", "GetCallerIdentity", {})
+    .n("STSClient", "GetCallerIdentityCommand")
+    .f(void 0, void 0)
+    .ser(Aws_query_1.se_GetCallerIdentityCommand)
+    .de(Aws_query_1.de_GetCallerIdentityCommand)
+    .build() {
 }
 exports.GetCallerIdentityCommand = GetCallerIdentityCommand;
 
@@ -11972,50 +10759,26 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(20510);
 const models_0_1 = __nccwpck_require__(21780);
 const Aws_query_1 = __nccwpck_require__(10740);
-class GetFederationTokenCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseGlobalEndpoint: { type: "builtInParams", name: "useGlobalEndpoint" },
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, GetFederationTokenCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "STSClient";
-        const commandName = "GetFederationTokenCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: models_0_1.GetFederationTokenResponseFilterSensitiveLog,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AWSSecurityTokenServiceV20110615",
-                operation: "GetFederationToken",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_query_1.se_GetFederationTokenCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_query_1.de_GetFederationTokenCommand)(output, context);
-    }
+class GetFederationTokenCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AWSSecurityTokenServiceV20110615", "GetFederationToken", {})
+    .n("STSClient", "GetFederationTokenCommand")
+    .f(void 0, models_0_1.GetFederationTokenResponseFilterSensitiveLog)
+    .ser(Aws_query_1.se_GetFederationTokenCommand)
+    .de(Aws_query_1.de_GetFederationTokenCommand)
+    .build() {
 }
 exports.GetFederationTokenCommand = GetFederationTokenCommand;
 
@@ -12033,50 +10796,26 @@ const middleware_endpoint_1 = __nccwpck_require__(82918);
 const middleware_serde_1 = __nccwpck_require__(81238);
 const smithy_client_1 = __nccwpck_require__(63570);
 Object.defineProperty(exports, "$Command", ({ enumerable: true, get: function () { return smithy_client_1.Command; } }));
-const types_1 = __nccwpck_require__(55756);
+const EndpointParameters_1 = __nccwpck_require__(20510);
 const models_0_1 = __nccwpck_require__(21780);
 const Aws_query_1 = __nccwpck_require__(10740);
-class GetSessionTokenCommand extends smithy_client_1.Command {
-    static getEndpointParameterInstructions() {
-        return {
-            UseGlobalEndpoint: { type: "builtInParams", name: "useGlobalEndpoint" },
-            UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
-            Endpoint: { type: "builtInParams", name: "endpoint" },
-            Region: { type: "builtInParams", name: "region" },
-            UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
-        };
-    }
-    constructor(input) {
-        super();
-        this.input = input;
-    }
-    resolveMiddleware(clientStack, configuration, options) {
-        this.middlewareStack.use((0, middleware_serde_1.getSerdePlugin)(configuration, this.serialize, this.deserialize));
-        this.middlewareStack.use((0, middleware_endpoint_1.getEndpointPlugin)(configuration, GetSessionTokenCommand.getEndpointParameterInstructions()));
-        const stack = clientStack.concat(this.middlewareStack);
-        const { logger } = configuration;
-        const clientName = "STSClient";
-        const commandName = "GetSessionTokenCommand";
-        const handlerExecutionContext = {
-            logger,
-            clientName,
-            commandName,
-            inputFilterSensitiveLog: (_) => _,
-            outputFilterSensitiveLog: models_0_1.GetSessionTokenResponseFilterSensitiveLog,
-            [types_1.SMITHY_CONTEXT_KEY]: {
-                service: "AWSSecurityTokenServiceV20110615",
-                operation: "GetSessionToken",
-            },
-        };
-        const { requestHandler } = configuration;
-        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
-    }
-    serialize(input, context) {
-        return (0, Aws_query_1.se_GetSessionTokenCommand)(input, context);
-    }
-    deserialize(output, context) {
-        return (0, Aws_query_1.de_GetSessionTokenCommand)(output, context);
-    }
+class GetSessionTokenCommand extends smithy_client_1.Command
+    .classBuilder()
+    .ep({
+    ...EndpointParameters_1.commonParams,
+})
+    .m(function (Command, cs, config, o) {
+    return [
+        (0, middleware_serde_1.getSerdePlugin)(config, this.serialize, this.deserialize),
+        (0, middleware_endpoint_1.getEndpointPlugin)(config, Command.getEndpointParameterInstructions()),
+    ];
+})
+    .s("AWSSecurityTokenServiceV20110615", "GetSessionToken", {})
+    .n("STSClient", "GetSessionTokenCommand")
+    .f(void 0, models_0_1.GetSessionTokenResponseFilterSensitiveLog)
+    .ser(Aws_query_1.se_GetSessionTokenCommand)
+    .de(Aws_query_1.de_GetSessionTokenCommand)
+    .build() {
 }
 exports.GetSessionTokenCommand = GetSessionTokenCommand;
 
@@ -12228,7 +10967,7 @@ exports.decorateDefaultCredentialProvider = decorateDefaultCredentialProvider;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.resolveClientEndpointParameters = void 0;
+exports.commonParams = exports.resolveClientEndpointParameters = void 0;
 const resolveClientEndpointParameters = (options) => {
     return {
         ...options,
@@ -12239,6 +10978,13 @@ const resolveClientEndpointParameters = (options) => {
     };
 };
 exports.resolveClientEndpointParameters = resolveClientEndpointParameters;
+exports.commonParams = {
+    UseGlobalEndpoint: { type: "builtInParams", name: "useGlobalEndpoint" },
+    UseFIPS: { type: "builtInParams", name: "useFipsEndpoint" },
+    Endpoint: { type: "builtInParams", name: "endpoint" },
+    Region: { type: "builtInParams", name: "region" },
+    UseDualStack: { type: "builtInParams", name: "useDualstackEndpoint" },
+};
 
 
 /***/ }),
@@ -21626,7 +20372,7 @@ var loadRestJsonErrorCode = (output, data) => {
         return sanitizeErrorCode(data["__type"]);
     }
 };
-var CreateTokenCommand = class _CreateTokenCommand extends smithy_client_7.Command {
+class CreateTokenCommand extends smithy_client_7.Command {
     constructor(input) {
         super();
         this.input = input;
@@ -21666,13 +20412,13 @@ var CreateTokenCommand = class _CreateTokenCommand extends smithy_client_7.Comma
     deserialize(output, context) {
         return de_CreateTokenCommand(output, context);
     }
-};
+}
 exports.CreateTokenCommand = CreateTokenCommand;
 const middleware_endpoint_3 = __nccwpck_require__(82918);
 const middleware_serde_2 = __nccwpck_require__(81238);
 const smithy_client_10 = __nccwpck_require__(63570);
 const types_2 = __nccwpck_require__(55756);
-var RegisterClientCommand = class _RegisterClientCommand extends smithy_client_10.Command {
+class RegisterClientCommand extends smithy_client_10.Command {
     constructor(input) {
         super();
         this.input = input;
@@ -21712,12 +20458,12 @@ var RegisterClientCommand = class _RegisterClientCommand extends smithy_client_1
     deserialize(output, context) {
         return de_RegisterClientCommand(output, context);
     }
-};
+}
 const middleware_endpoint_4 = __nccwpck_require__(82918);
 const middleware_serde_3 = __nccwpck_require__(81238);
 const smithy_client_11 = __nccwpck_require__(63570);
 const types_3 = __nccwpck_require__(55756);
-var StartDeviceAuthorizationCommand = class _StartDeviceAuthorizationCommand extends smithy_client_11.Command {
+class StartDeviceAuthorizationCommand extends smithy_client_11.Command {
     constructor(input) {
         super();
         this.input = input;
@@ -21757,7 +20503,7 @@ var StartDeviceAuthorizationCommand = class _StartDeviceAuthorizationCommand ext
     deserialize(output, context) {
         return de_StartDeviceAuthorizationCommand(output, context);
     }
-};
+}
 var commands = {
     CreateTokenCommand,
     RegisterClientCommand,
@@ -40086,12 +38832,120 @@ exports.collectBody = collectBody;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Command = void 0;
 const middleware_stack_1 = __nccwpck_require__(97911);
+const types_1 = __nccwpck_require__(55756);
 class Command {
     constructor() {
         this.middlewareStack = (0, middleware_stack_1.constructStack)();
     }
+    static classBuilder() {
+        return new ClassBuilder();
+    }
+    resolveMiddlewareWithContext(clientStack, configuration, options, { middlewareFn, clientName, commandName, inputFilterSensitiveLog, outputFilterSensitiveLog, smithyContext, additionalContext, CommandCtor, }) {
+        for (const mw of middlewareFn.bind(this)(CommandCtor, clientStack, configuration, options)) {
+            this.middlewareStack.use(mw);
+        }
+        const stack = clientStack.concat(this.middlewareStack);
+        const { logger } = configuration;
+        const handlerExecutionContext = {
+            logger,
+            clientName,
+            commandName,
+            inputFilterSensitiveLog,
+            outputFilterSensitiveLog,
+            [types_1.SMITHY_CONTEXT_KEY]: {
+                ...smithyContext,
+            },
+            ...additionalContext,
+        };
+        const { requestHandler } = configuration;
+        return stack.resolve((request) => requestHandler.handle(request.request, options || {}), handlerExecutionContext);
+    }
 }
 exports.Command = Command;
+class ClassBuilder {
+    constructor() {
+        this._init = () => { };
+        this._ep = {};
+        this._middlewareFn = () => [];
+        this._commandName = "";
+        this._clientName = "";
+        this._additionalContext = {};
+        this._smithyContext = {};
+        this._inputFilterSensitiveLog = (_) => _;
+        this._outputFilterSensitiveLog = (_) => _;
+        this._serializer = null;
+        this._deserializer = null;
+    }
+    init(cb) {
+        this._init = cb;
+    }
+    ep(endpointParameterInstructions) {
+        this._ep = endpointParameterInstructions;
+        return this;
+    }
+    m(middlewareSupplier) {
+        this._middlewareFn = middlewareSupplier;
+        return this;
+    }
+    s(service, operation, smithyContext = {}) {
+        this._smithyContext = {
+            service,
+            operation,
+            ...smithyContext,
+        };
+        return this;
+    }
+    c(additionalContext = {}) {
+        this._additionalContext = additionalContext;
+        return this;
+    }
+    n(clientName, commandName) {
+        this._clientName = clientName;
+        this._commandName = commandName;
+        return this;
+    }
+    f(inputFilter = (_) => _, outputFilter = (_) => _) {
+        this._inputFilterSensitiveLog = inputFilter;
+        this._outputFilterSensitiveLog = outputFilter;
+        return this;
+    }
+    ser(serializer) {
+        this._serializer = serializer;
+        return this;
+    }
+    de(deserializer) {
+        this._deserializer = deserializer;
+        return this;
+    }
+    build() {
+        const closure = this;
+        let CommandRef;
+        return (CommandRef = class extends Command {
+            static getEndpointParameterInstructions() {
+                return closure._ep;
+            }
+            constructor(input) {
+                super();
+                this.input = input;
+                this.serialize = closure._serializer;
+                this.deserialize = closure._deserializer;
+                closure._init(this);
+            }
+            resolveMiddleware(stack, configuration, options) {
+                return this.resolveMiddlewareWithContext(stack, configuration, options, {
+                    CommandCtor: CommandRef,
+                    middlewareFn: closure._middlewareFn,
+                    clientName: closure._clientName,
+                    commandName: closure._commandName,
+                    inputFilterSensitiveLog: closure._inputFilterSensitiveLog,
+                    outputFilterSensitiveLog: closure._outputFilterSensitiveLog,
+                    smithyContext: closure._smithyContext,
+                    additionalContext: closure._additionalContext,
+                });
+            }
+        });
+    }
+}
 
 
 /***/ }),
@@ -113889,7 +112743,7 @@ module.exports = require("zlib");
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"@aws-sdk/client-ecr","description":"AWS SDK for JavaScript Ecr Client for Node.js, Browser and React Native","version":"3.478.0","scripts":{"build":"concurrently \'yarn:build:cjs\' \'yarn:build:es\' \'yarn:build:types\'","build:cjs":"tsc -p tsconfig.cjs.json","build:es":"tsc -p tsconfig.es.json","build:include:deps":"lerna run --scope $npm_package_name --include-dependencies build","build:types":"tsc -p tsconfig.types.json","build:types:downlevel":"downlevel-dts dist-types dist-types/ts3.4","clean":"rimraf ./dist-* && rimraf *.tsbuildinfo","extract:docs":"api-extractor run --local","generate:client":"node ../../scripts/generate-clients/single-service --solo ecr"},"main":"./dist-cjs/index.js","types":"./dist-types/index.d.ts","module":"./dist-es/index.js","sideEffects":false,"dependencies":{"@aws-crypto/sha256-browser":"3.0.0","@aws-crypto/sha256-js":"3.0.0","@aws-sdk/client-sts":"3.478.0","@aws-sdk/core":"3.477.0","@aws-sdk/credential-provider-node":"3.478.0","@aws-sdk/middleware-host-header":"3.468.0","@aws-sdk/middleware-logger":"3.468.0","@aws-sdk/middleware-recursion-detection":"3.468.0","@aws-sdk/middleware-signing":"3.468.0","@aws-sdk/middleware-user-agent":"3.478.0","@aws-sdk/region-config-resolver":"3.470.0","@aws-sdk/types":"3.468.0","@aws-sdk/util-endpoints":"3.478.0","@aws-sdk/util-user-agent-browser":"3.468.0","@aws-sdk/util-user-agent-node":"3.470.0","@smithy/config-resolver":"^2.0.21","@smithy/core":"^1.2.0","@smithy/fetch-http-handler":"^2.3.1","@smithy/hash-node":"^2.0.17","@smithy/invalid-dependency":"^2.0.15","@smithy/middleware-content-length":"^2.0.17","@smithy/middleware-endpoint":"^2.2.3","@smithy/middleware-retry":"^2.0.24","@smithy/middleware-serde":"^2.0.15","@smithy/middleware-stack":"^2.0.9","@smithy/node-config-provider":"^2.1.8","@smithy/node-http-handler":"^2.2.1","@smithy/protocol-http":"^3.0.11","@smithy/smithy-client":"^2.1.18","@smithy/types":"^2.7.0","@smithy/url-parser":"^2.0.15","@smithy/util-base64":"^2.0.1","@smithy/util-body-length-browser":"^2.0.1","@smithy/util-body-length-node":"^2.1.0","@smithy/util-defaults-mode-browser":"^2.0.22","@smithy/util-defaults-mode-node":"^2.0.29","@smithy/util-endpoints":"^1.0.7","@smithy/util-retry":"^2.0.8","@smithy/util-utf8":"^2.0.2","@smithy/util-waiter":"^2.0.15","tslib":"^2.5.0"},"devDependencies":{"@smithy/service-client-documentation-generator":"^2.0.0","@tsconfig/node14":"1.0.3","@types/node":"^14.14.31","concurrently":"7.0.0","downlevel-dts":"0.10.1","rimraf":"3.0.2","typescript":"~4.9.5"},"engines":{"node":">=14.0.0"},"typesVersions":{"<4.0":{"dist-types/*":["dist-types/ts3.4/*"]}},"files":["dist-*/**"],"author":{"name":"AWS SDK for JavaScript Team","url":"https://aws.amazon.com/javascript/"},"license":"Apache-2.0","browser":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.browser"},"react-native":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.native"},"homepage":"https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-ecr","repository":{"type":"git","url":"https://github.com/aws/aws-sdk-js-v3.git","directory":"clients/client-ecr"}}');
+module.exports = JSON.parse('{"name":"@aws-sdk/client-ecr","description":"AWS SDK for JavaScript Ecr Client for Node.js, Browser and React Native","version":"3.481.0","scripts":{"build":"concurrently \'yarn:build:cjs\' \'yarn:build:es\' \'yarn:build:types\'","build:cjs":"tsc -p tsconfig.cjs.json","build:es":"tsc -p tsconfig.es.json","build:include:deps":"lerna run --scope $npm_package_name --include-dependencies build","build:types":"tsc -p tsconfig.types.json","build:types:downlevel":"downlevel-dts dist-types dist-types/ts3.4","clean":"rimraf ./dist-* && rimraf *.tsbuildinfo","extract:docs":"api-extractor run --local","generate:client":"node ../../scripts/generate-clients/single-service --solo ecr"},"main":"./dist-cjs/index.js","types":"./dist-types/index.d.ts","module":"./dist-es/index.js","sideEffects":false,"dependencies":{"@aws-crypto/sha256-browser":"3.0.0","@aws-crypto/sha256-js":"3.0.0","@aws-sdk/client-sts":"3.481.0","@aws-sdk/core":"3.481.0","@aws-sdk/credential-provider-node":"3.481.0","@aws-sdk/middleware-host-header":"3.468.0","@aws-sdk/middleware-logger":"3.468.0","@aws-sdk/middleware-recursion-detection":"3.468.0","@aws-sdk/middleware-signing":"3.468.0","@aws-sdk/middleware-user-agent":"3.478.0","@aws-sdk/region-config-resolver":"3.470.0","@aws-sdk/types":"3.468.0","@aws-sdk/util-endpoints":"3.478.0","@aws-sdk/util-user-agent-browser":"3.468.0","@aws-sdk/util-user-agent-node":"3.470.0","@smithy/config-resolver":"^2.0.21","@smithy/core":"^1.2.1","@smithy/fetch-http-handler":"^2.3.1","@smithy/hash-node":"^2.0.17","@smithy/invalid-dependency":"^2.0.15","@smithy/middleware-content-length":"^2.0.17","@smithy/middleware-endpoint":"^2.2.3","@smithy/middleware-retry":"^2.0.25","@smithy/middleware-serde":"^2.0.15","@smithy/middleware-stack":"^2.0.9","@smithy/node-config-provider":"^2.1.8","@smithy/node-http-handler":"^2.2.1","@smithy/protocol-http":"^3.0.11","@smithy/smithy-client":"^2.2.0","@smithy/types":"^2.7.0","@smithy/url-parser":"^2.0.15","@smithy/util-base64":"^2.0.1","@smithy/util-body-length-browser":"^2.0.1","@smithy/util-body-length-node":"^2.1.0","@smithy/util-defaults-mode-browser":"^2.0.23","@smithy/util-defaults-mode-node":"^2.0.30","@smithy/util-endpoints":"^1.0.7","@smithy/util-retry":"^2.0.8","@smithy/util-utf8":"^2.0.2","@smithy/util-waiter":"^2.0.15","tslib":"^2.5.0"},"devDependencies":{"@smithy/service-client-documentation-generator":"^2.0.0","@tsconfig/node14":"1.0.3","@types/node":"^14.14.31","concurrently":"7.0.0","downlevel-dts":"0.10.1","rimraf":"3.0.2","typescript":"~4.9.5"},"engines":{"node":">=14.0.0"},"typesVersions":{"<4.0":{"dist-types/*":["dist-types/ts3.4/*"]}},"files":["dist-*/**"],"author":{"name":"AWS SDK for JavaScript Team","url":"https://aws.amazon.com/javascript/"},"license":"Apache-2.0","browser":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.browser"},"react-native":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.native"},"homepage":"https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-ecr","repository":{"type":"git","url":"https://github.com/aws/aws-sdk-js-v3.git","directory":"clients/client-ecr"}}');
 
 /***/ }),
 
@@ -113897,7 +112751,7 @@ module.exports = JSON.parse('{"name":"@aws-sdk/client-ecr","description":"AWS SD
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"@aws-sdk/client-sso","description":"AWS SDK for JavaScript Sso Client for Node.js, Browser and React Native","version":"3.478.0","scripts":{"build":"concurrently \'yarn:build:cjs\' \'yarn:build:es\' \'yarn:build:types\'","build:cjs":"tsc -p tsconfig.cjs.json","build:es":"tsc -p tsconfig.es.json","build:include:deps":"lerna run --scope $npm_package_name --include-dependencies build","build:types":"tsc -p tsconfig.types.json","build:types:downlevel":"downlevel-dts dist-types dist-types/ts3.4","clean":"rimraf ./dist-* && rimraf *.tsbuildinfo","extract:docs":"api-extractor run --local","generate:client":"node ../../scripts/generate-clients/single-service --solo sso"},"main":"./dist-cjs/index.js","types":"./dist-types/index.d.ts","module":"./dist-es/index.js","sideEffects":false,"dependencies":{"@aws-crypto/sha256-browser":"3.0.0","@aws-crypto/sha256-js":"3.0.0","@aws-sdk/core":"3.477.0","@aws-sdk/middleware-host-header":"3.468.0","@aws-sdk/middleware-logger":"3.468.0","@aws-sdk/middleware-recursion-detection":"3.468.0","@aws-sdk/middleware-user-agent":"3.478.0","@aws-sdk/region-config-resolver":"3.470.0","@aws-sdk/types":"3.468.0","@aws-sdk/util-endpoints":"3.478.0","@aws-sdk/util-user-agent-browser":"3.468.0","@aws-sdk/util-user-agent-node":"3.470.0","@smithy/config-resolver":"^2.0.21","@smithy/core":"^1.2.0","@smithy/fetch-http-handler":"^2.3.1","@smithy/hash-node":"^2.0.17","@smithy/invalid-dependency":"^2.0.15","@smithy/middleware-content-length":"^2.0.17","@smithy/middleware-endpoint":"^2.2.3","@smithy/middleware-retry":"^2.0.24","@smithy/middleware-serde":"^2.0.15","@smithy/middleware-stack":"^2.0.9","@smithy/node-config-provider":"^2.1.8","@smithy/node-http-handler":"^2.2.1","@smithy/protocol-http":"^3.0.11","@smithy/smithy-client":"^2.1.18","@smithy/types":"^2.7.0","@smithy/url-parser":"^2.0.15","@smithy/util-base64":"^2.0.1","@smithy/util-body-length-browser":"^2.0.1","@smithy/util-body-length-node":"^2.1.0","@smithy/util-defaults-mode-browser":"^2.0.22","@smithy/util-defaults-mode-node":"^2.0.29","@smithy/util-endpoints":"^1.0.7","@smithy/util-retry":"^2.0.8","@smithy/util-utf8":"^2.0.2","tslib":"^2.5.0"},"devDependencies":{"@smithy/service-client-documentation-generator":"^2.0.0","@tsconfig/node14":"1.0.3","@types/node":"^14.14.31","concurrently":"7.0.0","downlevel-dts":"0.10.1","rimraf":"3.0.2","typescript":"~4.9.5"},"engines":{"node":">=14.0.0"},"typesVersions":{"<4.0":{"dist-types/*":["dist-types/ts3.4/*"]}},"files":["dist-*/**"],"author":{"name":"AWS SDK for JavaScript Team","url":"https://aws.amazon.com/javascript/"},"license":"Apache-2.0","browser":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.browser"},"react-native":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.native"},"homepage":"https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-sso","repository":{"type":"git","url":"https://github.com/aws/aws-sdk-js-v3.git","directory":"clients/client-sso"}}');
+module.exports = JSON.parse('{"name":"@aws-sdk/client-sso","description":"AWS SDK for JavaScript Sso Client for Node.js, Browser and React Native","version":"3.481.0","scripts":{"build":"concurrently \'yarn:build:cjs\' \'yarn:build:es\' \'yarn:build:types\'","build:cjs":"tsc -p tsconfig.cjs.json","build:es":"tsc -p tsconfig.es.json","build:include:deps":"lerna run --scope $npm_package_name --include-dependencies build","build:types":"tsc -p tsconfig.types.json","build:types:downlevel":"downlevel-dts dist-types dist-types/ts3.4","clean":"rimraf ./dist-* && rimraf *.tsbuildinfo","extract:docs":"api-extractor run --local","generate:client":"node ../../scripts/generate-clients/single-service --solo sso"},"main":"./dist-cjs/index.js","types":"./dist-types/index.d.ts","module":"./dist-es/index.js","sideEffects":false,"dependencies":{"@aws-crypto/sha256-browser":"3.0.0","@aws-crypto/sha256-js":"3.0.0","@aws-sdk/core":"3.481.0","@aws-sdk/middleware-host-header":"3.468.0","@aws-sdk/middleware-logger":"3.468.0","@aws-sdk/middleware-recursion-detection":"3.468.0","@aws-sdk/middleware-user-agent":"3.478.0","@aws-sdk/region-config-resolver":"3.470.0","@aws-sdk/types":"3.468.0","@aws-sdk/util-endpoints":"3.478.0","@aws-sdk/util-user-agent-browser":"3.468.0","@aws-sdk/util-user-agent-node":"3.470.0","@smithy/config-resolver":"^2.0.21","@smithy/core":"^1.2.1","@smithy/fetch-http-handler":"^2.3.1","@smithy/hash-node":"^2.0.17","@smithy/invalid-dependency":"^2.0.15","@smithy/middleware-content-length":"^2.0.17","@smithy/middleware-endpoint":"^2.2.3","@smithy/middleware-retry":"^2.0.25","@smithy/middleware-serde":"^2.0.15","@smithy/middleware-stack":"^2.0.9","@smithy/node-config-provider":"^2.1.8","@smithy/node-http-handler":"^2.2.1","@smithy/protocol-http":"^3.0.11","@smithy/smithy-client":"^2.2.0","@smithy/types":"^2.7.0","@smithy/url-parser":"^2.0.15","@smithy/util-base64":"^2.0.1","@smithy/util-body-length-browser":"^2.0.1","@smithy/util-body-length-node":"^2.1.0","@smithy/util-defaults-mode-browser":"^2.0.23","@smithy/util-defaults-mode-node":"^2.0.30","@smithy/util-endpoints":"^1.0.7","@smithy/util-retry":"^2.0.8","@smithy/util-utf8":"^2.0.2","tslib":"^2.5.0"},"devDependencies":{"@smithy/service-client-documentation-generator":"^2.0.0","@tsconfig/node14":"1.0.3","@types/node":"^14.14.31","concurrently":"7.0.0","downlevel-dts":"0.10.1","rimraf":"3.0.2","typescript":"~4.9.5"},"engines":{"node":">=14.0.0"},"typesVersions":{"<4.0":{"dist-types/*":["dist-types/ts3.4/*"]}},"files":["dist-*/**"],"author":{"name":"AWS SDK for JavaScript Team","url":"https://aws.amazon.com/javascript/"},"license":"Apache-2.0","browser":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.browser"},"react-native":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.native"},"homepage":"https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-sso","repository":{"type":"git","url":"https://github.com/aws/aws-sdk-js-v3.git","directory":"clients/client-sso"}}');
 
 /***/ }),
 
@@ -113905,7 +112759,7 @@ module.exports = JSON.parse('{"name":"@aws-sdk/client-sso","description":"AWS SD
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"@aws-sdk/client-sts","description":"AWS SDK for JavaScript Sts Client for Node.js, Browser and React Native","version":"3.478.0","scripts":{"build":"concurrently \'yarn:build:cjs\' \'yarn:build:es\' \'yarn:build:types\'","build:cjs":"tsc -p tsconfig.cjs.json","build:es":"tsc -p tsconfig.es.json","build:include:deps":"lerna run --scope $npm_package_name --include-dependencies build","build:types":"tsc -p tsconfig.types.json","build:types:downlevel":"downlevel-dts dist-types dist-types/ts3.4","clean":"rimraf ./dist-* && rimraf *.tsbuildinfo","extract:docs":"api-extractor run --local","generate:client":"node ../../scripts/generate-clients/single-service --solo sts","test":"yarn test:unit","test:unit":"jest"},"main":"./dist-cjs/index.js","types":"./dist-types/index.d.ts","module":"./dist-es/index.js","sideEffects":false,"dependencies":{"@aws-crypto/sha256-browser":"3.0.0","@aws-crypto/sha256-js":"3.0.0","@aws-sdk/core":"3.477.0","@aws-sdk/credential-provider-node":"3.478.0","@aws-sdk/middleware-host-header":"3.468.0","@aws-sdk/middleware-logger":"3.468.0","@aws-sdk/middleware-recursion-detection":"3.468.0","@aws-sdk/middleware-user-agent":"3.478.0","@aws-sdk/region-config-resolver":"3.470.0","@aws-sdk/types":"3.468.0","@aws-sdk/util-endpoints":"3.478.0","@aws-sdk/util-user-agent-browser":"3.468.0","@aws-sdk/util-user-agent-node":"3.470.0","@smithy/config-resolver":"^2.0.21","@smithy/core":"^1.2.0","@smithy/fetch-http-handler":"^2.3.1","@smithy/hash-node":"^2.0.17","@smithy/invalid-dependency":"^2.0.15","@smithy/middleware-content-length":"^2.0.17","@smithy/middleware-endpoint":"^2.2.3","@smithy/middleware-retry":"^2.0.24","@smithy/middleware-serde":"^2.0.15","@smithy/middleware-stack":"^2.0.9","@smithy/node-config-provider":"^2.1.8","@smithy/node-http-handler":"^2.2.1","@smithy/protocol-http":"^3.0.11","@smithy/smithy-client":"^2.1.18","@smithy/types":"^2.7.0","@smithy/url-parser":"^2.0.15","@smithy/util-base64":"^2.0.1","@smithy/util-body-length-browser":"^2.0.1","@smithy/util-body-length-node":"^2.1.0","@smithy/util-defaults-mode-browser":"^2.0.22","@smithy/util-defaults-mode-node":"^2.0.29","@smithy/util-endpoints":"^1.0.7","@smithy/util-middleware":"^2.0.8","@smithy/util-retry":"^2.0.8","@smithy/util-utf8":"^2.0.2","fast-xml-parser":"4.2.5","tslib":"^2.5.0"},"devDependencies":{"@smithy/service-client-documentation-generator":"^2.0.0","@tsconfig/node14":"1.0.3","@types/node":"^14.14.31","concurrently":"7.0.0","downlevel-dts":"0.10.1","rimraf":"3.0.2","typescript":"~4.9.5"},"engines":{"node":">=14.0.0"},"typesVersions":{"<4.0":{"dist-types/*":["dist-types/ts3.4/*"]}},"files":["dist-*/**"],"author":{"name":"AWS SDK for JavaScript Team","url":"https://aws.amazon.com/javascript/"},"license":"Apache-2.0","browser":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.browser"},"react-native":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.native"},"homepage":"https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-sts","repository":{"type":"git","url":"https://github.com/aws/aws-sdk-js-v3.git","directory":"clients/client-sts"}}');
+module.exports = JSON.parse('{"name":"@aws-sdk/client-sts","description":"AWS SDK for JavaScript Sts Client for Node.js, Browser and React Native","version":"3.481.0","scripts":{"build":"concurrently \'yarn:build:cjs\' \'yarn:build:es\' \'yarn:build:types\'","build:cjs":"tsc -p tsconfig.cjs.json","build:es":"tsc -p tsconfig.es.json","build:include:deps":"lerna run --scope $npm_package_name --include-dependencies build","build:types":"tsc -p tsconfig.types.json","build:types:downlevel":"downlevel-dts dist-types dist-types/ts3.4","clean":"rimraf ./dist-* && rimraf *.tsbuildinfo","extract:docs":"api-extractor run --local","generate:client":"node ../../scripts/generate-clients/single-service --solo sts","test":"yarn test:unit","test:unit":"jest"},"main":"./dist-cjs/index.js","types":"./dist-types/index.d.ts","module":"./dist-es/index.js","sideEffects":false,"dependencies":{"@aws-crypto/sha256-browser":"3.0.0","@aws-crypto/sha256-js":"3.0.0","@aws-sdk/core":"3.481.0","@aws-sdk/credential-provider-node":"3.481.0","@aws-sdk/middleware-host-header":"3.468.0","@aws-sdk/middleware-logger":"3.468.0","@aws-sdk/middleware-recursion-detection":"3.468.0","@aws-sdk/middleware-user-agent":"3.478.0","@aws-sdk/region-config-resolver":"3.470.0","@aws-sdk/types":"3.468.0","@aws-sdk/util-endpoints":"3.478.0","@aws-sdk/util-user-agent-browser":"3.468.0","@aws-sdk/util-user-agent-node":"3.470.0","@smithy/config-resolver":"^2.0.21","@smithy/core":"^1.2.1","@smithy/fetch-http-handler":"^2.3.1","@smithy/hash-node":"^2.0.17","@smithy/invalid-dependency":"^2.0.15","@smithy/middleware-content-length":"^2.0.17","@smithy/middleware-endpoint":"^2.2.3","@smithy/middleware-retry":"^2.0.25","@smithy/middleware-serde":"^2.0.15","@smithy/middleware-stack":"^2.0.9","@smithy/node-config-provider":"^2.1.8","@smithy/node-http-handler":"^2.2.1","@smithy/protocol-http":"^3.0.11","@smithy/smithy-client":"^2.2.0","@smithy/types":"^2.7.0","@smithy/url-parser":"^2.0.15","@smithy/util-base64":"^2.0.1","@smithy/util-body-length-browser":"^2.0.1","@smithy/util-body-length-node":"^2.1.0","@smithy/util-defaults-mode-browser":"^2.0.23","@smithy/util-defaults-mode-node":"^2.0.30","@smithy/util-endpoints":"^1.0.7","@smithy/util-middleware":"^2.0.8","@smithy/util-retry":"^2.0.8","@smithy/util-utf8":"^2.0.2","fast-xml-parser":"4.2.5","tslib":"^2.5.0"},"devDependencies":{"@smithy/service-client-documentation-generator":"^2.0.0","@tsconfig/node14":"1.0.3","@types/node":"^14.14.31","concurrently":"7.0.0","downlevel-dts":"0.10.1","rimraf":"3.0.2","typescript":"~4.9.5"},"engines":{"node":">=14.0.0"},"typesVersions":{"<4.0":{"dist-types/*":["dist-types/ts3.4/*"]}},"files":["dist-*/**"],"author":{"name":"AWS SDK for JavaScript Team","url":"https://aws.amazon.com/javascript/"},"license":"Apache-2.0","browser":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.browser"},"react-native":{"./dist-es/runtimeConfig":"./dist-es/runtimeConfig.native"},"homepage":"https://github.com/aws/aws-sdk-js-v3/tree/main/clients/client-sts","repository":{"type":"git","url":"https://github.com/aws/aws-sdk-js-v3.git","directory":"clients/client-sts"}}');
 
 /***/ }),
 
