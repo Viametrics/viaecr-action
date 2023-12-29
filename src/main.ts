@@ -1,14 +1,14 @@
-import * as core from "@actions/core";
-import { context } from "@actions/github";
-import { getEcrRegistry } from "./aws-utils";
-import { format } from "date-fns";
-import { Docker } from "docker-cli-js";
+import * as core from '@actions/core'
+import { context } from '@actions/github'
+import { getEcrRegistry } from './aws-utils'
+import { Docker } from 'docker-cli-js'
 import { actionInput, TargetInput } from './action-input'
 import { buildDocker, DockerBuild, publishDocker } from './docker-utils'
+import { execSync } from 'node:child_process'
 
 async function run(): Promise<void> {
   const registry: string = await getEcrRegistry();
-  const imageTag: string = createImageTag();
+  const imageTag: string = await createImageTag();
 
   const docker = new Docker();
   const builds: DockerBuild[] = actionInput.targets
@@ -39,10 +39,15 @@ async function run(): Promise<void> {
   }
 }
 
-function createImageTag(): string {
+async function createImageTag(): Promise<string> {
   const shortSha: string = context.sha.substring(0, 7);
-  const timestamp: string = format(new Date(), "yyyyMMdd-HHmm");
+  const timestamp: string = getTimeStamp();
   return `${actionInput.tagPrefix}${timestamp}-${shortSha}`;
+}
+
+function getTimeStamp(): string {
+  const commitDateISO = execSync('git show -s --format=%ci HEAD').toString().trim();
+  return execSync(`date -u -d "${commitDateISO}" +'%Y%m%d-%H%M'`).toString().trim();
 }
 
 try {
